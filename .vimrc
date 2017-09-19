@@ -46,7 +46,7 @@ imap <Leader>{ {}<Esc>i
 
 " insert a matching end
 imap <S-CR> <CR><CR>end<Esc>-cc
-
+"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " visual appearance
 " this needs to be *before* the first colour scheme command, otherwise it
@@ -92,3 +92,8 @@ autocmd FileType ruby imap <buffer> <Leader>m <Plug>(xmpfilter-mark)
 autocmd FileType ruby nmap <buffer> <Leader>r <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> <Leader>r <Plug>(xmpfilter-run)
 autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
+
+" recognising Guardfiles as ruby
+augroup filetypedetect
+  au BufRead,BufNewFile Guardfile set filetype=ruby
+augroup END
