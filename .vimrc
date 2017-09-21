@@ -17,6 +17,9 @@ Plugin 'noprompt/vim-yardoc'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
+" elixir support
+Plugin 'elixir-editors/vim-elixir'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -96,4 +99,9 @@ autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
 " recognising Guardfiles as ruby
 augroup filetypedetect
   au BufRead,BufNewFile Guardfile set filetype=ruby
+augroup END
+
+" recognising .ex as elixir
+augroup filetypedetect
+  au BufRead,BufNewFile *.ex set filetype=elixir
 augroup END
