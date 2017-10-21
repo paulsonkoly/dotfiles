@@ -16,7 +16,6 @@ Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'w0rp/ale'
 
 
 call vundle#end()            " required
@@ -66,9 +65,6 @@ colorscheme inkpot
 let g:airline_theme = "bubblegum"
 
 highlight Cursor guibg=#afd787
-
-" ale warning and error count on airline status
-let g:airline#extensions#ale#enabled=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                     " show line numbers
