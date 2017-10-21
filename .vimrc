@@ -9,6 +9,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ciaranm/inkpot'
@@ -16,7 +17,6 @@ Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-
 
 call vundle#end()            " required
 filetype plugin indent on    " required
