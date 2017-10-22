@@ -65,6 +65,7 @@ colorscheme inkpot
 let g:airline_theme = "bubblegum"
 
 " u3301 doesn't appear correctly
+let g:airline_symbols = {}
 let g:airline_symbols.maxlinenr = 'Ln'
 
 highlight Cursor guibg=#afd787
