@@ -97,3 +97,7 @@ autocmd FileType ruby imap <buffer> <Leader>m <Plug>(xmpfilter-mark)
 autocmd FileType ruby nmap <buffer> <Leader>r <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> <Leader>r <Plug>(xmpfilter-run)
 autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
+
+" highlight operators in ruby
+let ruby_operators=1
+
