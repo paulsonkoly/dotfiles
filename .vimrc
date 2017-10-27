@@ -18,6 +18,7 @@ Plugin 'noprompt/vim-yardoc'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -107,3 +108,8 @@ let ruby_operators=1
 " required by vim-refactoring \rit
 packadd! matchit
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" grepping
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
