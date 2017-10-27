@@ -15,6 +15,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ciaranm/inkpot'
 Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'noprompt/vim-yardoc'
+Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
@@ -102,4 +103,7 @@ autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
 
 " highlight operators in ruby
 let ruby_operators=1
+
+" required by vim-refactoring \rit
+packadd! matchit
 
