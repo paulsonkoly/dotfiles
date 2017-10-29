@@ -1,10 +1,10 @@
 general {
-        output_format = "i3bar"
-        colors = true
-        interval = 5
-        color_good = "#afd787"
-        color_bad = "#afd787"
-        color_degraded = "#afd787"
+  output_format = "i3bar"
+  colors = true
+  interval = 5
+  color_good = "#afd787"
+  color_bad = "#afd787"
+  color_degraded = "#afd787"
 }
 
 order += "disk /"
@@ -16,44 +16,44 @@ order += "cpu_temperature 0"
 order += "volume master"
 
 wireless wlan0 {
-        format_up = " %quality @ %essid, %bitrate %ip"
-        format_down = " down"
+  format_up = " %quality @ %essid, %bitrate %ip"
+  format_down = " down"
 }
 
 ethernet enp9s0 {
-        # if you use %speed, i3status requires the cap_net_admin capability
-        format_up = " %ip"
-        format_down = " down"
+  # if you use %speed, i3status requires the cap_net_admin capability
+  format_up = " %ip"
+  format_down = " down"
 }
 
 battery 0 {
-        format = "%status %percentage"
-        format_down = "No battery"
-        status_chr = ""
-        status_bat = ""
-        status_full = ""
-        path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 10
+  format = "%status %percentage"
+  format_down = "No battery"
+  status_chr = ""
+  status_bat = ""
+  status_full = ""
+  path = "/sys/class/power_supply/BAT%d/uevent"
+  low_threshold = 10
 }
 
 load {
-        format = " %5min"
+  format = " %5min"
 }
 
 cpu_temperature 0 {
-	format = "T: %degrees °C"
-#	path = "/sys/devices/platform/coretemp.0/temp1_input"
+  format = "T: %degrees °C"
+  #	path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
 
 
 disk "/" {
-        format = "  %free"
+  format = "  %free"
 }
 
 volume master {
-        format = " %volume"
-        format_muted = " muted"
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
+  format = " %volume"
+  format_muted = " muted"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
 }
