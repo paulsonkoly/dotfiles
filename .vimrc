@@ -15,10 +15,13 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ciaranm/inkpot'
 Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'noprompt/vim-yardoc'
-Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -39,13 +42,6 @@ noremap <Left> <NOP>
 inoremap <Left> <NOP>
 noremap <Right> <NOP>
 inoremap <Right> <NOP>
-
-" inserting pair of parens etc
-imap <Leader>" ""<Esc>i
-imap <Leader>' ''<Esc>i
-imap <Leader>( ()<Esc>i
-imap <Leader>[ []<Esc>i
-imap <Leader>{ {}<Esc>i
 
 " insert a matching end
 imap <S-CR> <CR><CR>end<Esc>-cc
