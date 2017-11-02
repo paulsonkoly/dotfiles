@@ -155,8 +155,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-for_window [class="dzen2"] floating enable
-
 # class                 border  backgr. text    indicator child_border
 client.focused          #3a3a3a #444444 #afd787 #3a3a3a   #3a3a3a
 # client.focused_inactive #ff0000 #5f676a #ffffff #484e50   #5f676a
