@@ -165,19 +165,6 @@ client.unfocused        #3a3a3a #3a3a3a #888888 #3a3a3a   #3a3a3a
 
 client.background       #ffffff
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-  status_command i3status
-  tray_output primary
-  font pango:DejaVu Sans Mono, Icons 8
-  position top
-  colors {
-    background #3a3a3a
-    statusline #afd787
-    separator #9fad8c
-    # item border background text
-    focused_workspace #3a3a3a #afd787 #3a3a3a
-    inactive_workspace #444444 #444444 #9fad8c
-  }
-}
+for_window [class="^.*"] border pixel 1
+
+exec_always --no-startup-id polybar bar0
