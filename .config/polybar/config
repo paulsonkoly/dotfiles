@@ -166,17 +166,20 @@ type = internal/network
 interface = wlan0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
+format-connected = <label-connected> <ramp-signal>
+label-connected = %{F#9fad8c}%{F-} %essid::10:..%
 
-format-disconnected =
+format-disconnected = %{F#9fad8c}%{F-} down
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 = ▁
+ramp-signal-1 = ▂
+ramp-signal-2 = ▃
+ramp-signal-3 = ▄
+ramp-signal-4 = ▅
+ramp-signal-5 = ▆
+ramp-signal-6 = ▇
+ramp-signal-7 = █
+ramp-signal-foreground = #9fad8c
 
 [module/eth]
 type = internal/network
