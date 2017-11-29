@@ -41,8 +41,8 @@ font-0 = DejaVu Sans Mono:pixelsize=8;1
 font-1 = Icons:pixelsize=9;2
 
 modules-left = i3
-modules-center = mpd
-modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-center = xwindow
+modules-right = mpd filesystem memory cpu wlan eth battery temperature volume date xkeyboard powermenu
 
 tray-position = right
 tray-padding = 2
