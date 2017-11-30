@@ -273,17 +273,16 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
+format = <label>
+format-prefix = " "
+format-prefix-foreground = #9fad8c
+format-warn = <label-warn>
+format-warn-prefix = " "
+format-warn-prefix-foreground = #9fad8c
 
 label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
