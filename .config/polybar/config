@@ -216,29 +216,30 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = ""
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
+format-muted-prefix = " "
+format-muted-foreground = #9fad8c
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = #9fad8c
+bar-volume-foreground-1 = #9fad8c
+bar-volume-foreground-2 = #9fad8c
+bar-volume-foreground-3 = #9fad8c
+bar-volume-foreground-4 = #9fad8c
+bar-volume-foreground-5 = #9fad8c
+bar-volume-foreground-6 = #9fad8c
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = ${colors.foreground}
 bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = #9fad8c
 
 [module/battery]
 type = internal/battery
