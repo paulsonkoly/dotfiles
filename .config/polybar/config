@@ -19,7 +19,7 @@ alert = #bd2c40
 [bar/bar0]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 18
+height = 17
 fixed-center = false
 
 background = ${colors.background}
@@ -37,7 +37,7 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 0
 
-font-0 = DejaVu Sans Mono:pixelsize=8;1
+font-0 = DejaVu Sans Mono:pixelsize=8;2
 font-1 = Icons:pixelsize=9;2
 
 modules-left = i3
