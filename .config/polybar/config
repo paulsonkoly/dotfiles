@@ -42,7 +42,7 @@ font-1 = Icons:pixelsize=9;2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = mpd filesystem memory cpu wlan eth battery temperature volume date xkeyboard powermenu
+modules-right = mpd filesystem memory cpu wlan eth temperature volume battery date xkeyboard powermenu
 
 tray-position = right
 tray-padding = 2
@@ -251,18 +251,19 @@ format-charging = <animation-charging> <label-charging>
 
 format-discharging = <ramp-capacity> <label-discharging>
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix = " "
+format-full-prefix-foreground = #9fad8c
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = #9fad8c
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-foreground = #9fad8c
 animation-charging-framerate = 750
 
 [module/temperature]
