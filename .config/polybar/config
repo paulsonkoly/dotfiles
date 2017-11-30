@@ -116,11 +116,16 @@ label-urgent-padding = ${self.label-focused-padding}
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 
+icon-prev-foreground = #9fad8c
+icon-stop = 
+icon-stop-foreground = #9fad8c
+icon-play = 
+icon-play-foreground = #9fad8c
+icon-pause = 
+icon-pause-foreground = #9fad8c
+icon-next = 
+icon-next-foreground = #9fad8c
 
 label-song-maxlen = 25
 label-song-ellipsis = true
