@@ -22,6 +22,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
+Plugin 'junegunn/vim-easy-align'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,13 +35,13 @@ set guioptions-=L  "remove left-hand scroll bar
 set guifont=DejaVu\ Sans\ Mono\ 10
 
 " breaking bad habits
-noremap <Up> <NOP>
-inoremap <Up> <NOP>
-noremap <Down> <NOP>
-inoremap <Down> <NOP>
-noremap <Left> <NOP>
-inoremap <Left> <NOP>
-noremap <Right> <NOP>
+noremap  <Up>    <NOP>
+inoremap <Up>    <NOP>
+noremap  <Down>  <NOP>
+inoremap <Down>  <NOP>
+noremap  <Left>  <NOP>
+inoremap <Left>  <NOP>
+noremap  <Right> <NOP>
 inoremap <Right> <NOP>
 
 " insert a matching end
@@ -109,3 +110,11 @@ packadd! matchit
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" easy align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
