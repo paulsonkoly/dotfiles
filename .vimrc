@@ -96,9 +96,6 @@ autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
 " highlight operators in ruby
 let ruby_operators=1
 
-" required by vim-refactoring \rit
-packadd! matchit
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " grepping
 if executable('ag')
