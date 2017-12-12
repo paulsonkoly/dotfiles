@@ -10,9 +10,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'ciaranm/inkpot'
 Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'SirVer/ultisnips'
@@ -23,6 +20,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'fcpg/vim-farout'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -60,16 +58,12 @@ set list
 
 syntax on
 
-colorscheme inkpot
-let g:airline_theme = "bubblegum"
+colorscheme farout
 
-" u3301 doesn't appear correctly
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.maxlinenr = 'Ln'
-
-highlight Cursor guibg=#afd787
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" statusline
+set laststatus=2
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%y\ %-14.(%l,%c%V%)\ %P
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                     " show line numbers
