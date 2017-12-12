@@ -42,8 +42,6 @@ inoremap <Left>  <NOP>
 noremap  <Right> <NOP>
 inoremap <Right> <NOP>
 
-" insert a matching end
-imap <S-CR> <CR><CR>end<Esc>-cc
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " visual appearance
@@ -83,6 +81,8 @@ set path+=**
 " this is the tab menu for different options on finding files
 set wildmenu
 
+" insert a matching end
+autocmd FileType ruby map <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ruby stuff
 autocmd FileType ruby nmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
