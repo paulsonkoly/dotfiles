@@ -37,7 +37,7 @@ bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+p exec dmenu_run
-bindsym $mod+p exec dmenu_run -i -fn 'DejaVu Sans Mono:pixelsize=12' -nb '#444444' -nf '#9fad8c' -sf '#afd787' -sb '#444444'
+bindsym $mod+p exec dmenu_run -i -fn 'DejaVu Sans Mono:pixelsize=12' -nb '#291916' -nf '#a4895c' -sf '#bf472c' -sb '#291916'
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -159,10 +159,10 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #3a3a3a #444444 #afd787 #3a3a3a   #3a3a3a
+client.focused          #291916 #291916 #afd787 #291916   #291916
 # client.focused_inactive #ff0000 #5f676a #ffffff #484e50   #5f676a
-client.focused_inactive #3a3a3a #3a3a3a #888888 #3a3a3a   #3a3a3a
-client.unfocused        #3a3a3a #3a3a3a #888888 #3a3a3a   #3a3a3a
+client.focused_inactive #291916 #291916 #888888 #291916   #291916
+client.unfocused        #291916 #291916 #888888 #291916   #291916
 # client.urgent           #2f343a #900000 #ffffff #900000   #900000
 # client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
