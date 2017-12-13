@@ -96,6 +96,12 @@ autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
 let ruby_operators=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" matchit for ruby do-end if-end etc
+" This is also required for ruby text objects to work, as the plugin uses % to
+" get the ends of the block.
+runtime macros/matchit.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " grepping
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
