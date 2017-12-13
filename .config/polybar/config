@@ -8,12 +8,12 @@
 ;=====================================================
 
 [colors]
-foreground = #afd787
-foreground-inverse = #3a3a3a
-foreground-faded = #9fad8c
-background = #3a3a3a
-background-inverse = #afd787
-background-raised = #444
+foreground = #a4895c
+foreground-inverse = #bf472c
+foreground-faded = #a4895c
+background = #291916
+background-inverse = #291916
+background-raised = #291916
 warning = #e60053
 
 [bar/bar0]
@@ -73,7 +73,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#9fad8c} %{F-}%free%
+label-mounted = %{F#a4895c} %{F-}%free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-inverse}
 
@@ -146,9 +146,9 @@ interface = wlan0
 interval = 3.0
 
 format-connected = <label-connected> <ramp-signal>
-label-connected = %{F#9fad8c}%{F-} %essid::10:..%
+label-connected = %{F#a4895c}%{F-} %essid::10:..%
 
-format-disconnected = %{F#9fad8c}%{F-} down
+format-disconnected = %{F#a4895c}%{F-} down
 
 ramp-signal-0 = ▁
 ramp-signal-1 = ▂
