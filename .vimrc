@@ -49,7 +49,7 @@ inoremap <Right> <NOP>
 " this needs to be *before* the first colour scheme command, otherwise it
 " might be overridden
 highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=LightCoral
+autocmd ColorScheme * highlight link ExtraWhitespace ErrorMsg
 " Show leading white space that includes spaces, and trailing white space.
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 set listchars=trail:·
