@@ -20,6 +20,8 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'fcpg/vim-farout'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,12 +52,26 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=LightCoral
 " Show leading white space that includes spaces, and trailing white space.
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
-set listchars=trail:�
+set listchars=trail:·
 set list
 
 syntax on
 
 colorscheme farout
+
+" this setup matches the fzf logo on a statusbar background
+hi fzf1 guifg=#f80069 guibg=#291916
+hi fzf2 guifg=#b0e1bd guibg=#291916
+hi fzf3 guifg=#e9e9e9 guibg=#291916
+
+let g:gitgutter_sign_added = '⬤'
+let g:gitgutter_sign_modified = '⬤'
+let g:gitgutter_sign_removed = '⬤'
+let g:gitgutter_sign_modified_removed = '⬤'
+
+hi GitGutterAdd guifg=#0f2108
+hi GitGutterChange guifg=#272406
+hi GitGutterDelete guifg=#2f0908
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " statusline
@@ -115,3 +131,19 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+      \ { 'fg':    ['fg', 'Normal'],
+      \ 'hl':      ['fg', 'Comment'],
+      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+      \ 'hl+':     ['fg', 'Statement'],
+      \ 'info':    ['fg', 'PreProc'],
+      \ 'border':  ['fg', 'Ignore'],
+      \ 'prompt':  ['fg', 'Conditional'],
+      \ 'pointer': ['fg', 'Exception'],
+      \ 'marker':  ['fg', 'Keyword'],
+      \ 'spinner': ['fg', 'Label'],
+      \ 'header':  ['fg', 'Comment'] }
