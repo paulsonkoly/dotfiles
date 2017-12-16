@@ -147,3 +147,12 @@ let g:fzf_colors =
       \ 'marker':  ['fg', 'Keyword'],
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ultisnips
+" directory must be in the runtime path!
+let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
+autocmd FileType snippets set noexpandtab
+autocmd FileType snippets set shiftwidth=2
+autocmd FileType snippets set tabstop=2
+autocmd FileType snippets set softtabstop=2
