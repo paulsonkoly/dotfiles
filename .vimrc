@@ -49,9 +49,11 @@ inoremap <Right> <NOP>
 " this needs to be *before* the first colour scheme command, otherwise it
 " might be overridden
 highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight link ExtraWhitespace ErrorMsg
-" Show leading white space that includes spaces, and trailing white space.
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
+augroup ColorAuto
+  autocmd ColorScheme * highlight link ExtraWhitespace ErrorMsg
+  " Show leading white space that includes spaces, and trailing white space.
+  autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
+augroup end
 set listchars=trail:·
 set list
 
@@ -96,17 +98,20 @@ set path+=**
 " this is the tab menu for different options on finding files
 set wildmenu
 
-" insert a matching end
-autocmd FileType ruby map <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ruby stuff
-autocmd FileType ruby nmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
-autocmd FileType ruby xmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
-autocmd FileType ruby imap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+augroup RubyAuto
+  autocmd FileType ruby nmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby xmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby imap <buffer> <Leader>m <Plug>(xmpfilter-mark)
 
-autocmd FileType ruby nmap <buffer> <Leader>r <Plug>(xmpfilter-run)
-autocmd FileType ruby xmap <buffer> <Leader>r <Plug>(xmpfilter-run)
-autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
+  autocmd FileType ruby nmap <buffer> <Leader>r <Plug>(xmpfilter-run)
+  autocmd FileType ruby xmap <buffer> <Leader>r <Plug>(xmpfilter-run)
+  autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
+
+  " insert a matching end
+  autocmd FileType ruby map <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
+augroup end
 
 " highlight operators in ruby
 let ruby_operators=1
@@ -152,7 +157,6 @@ let g:fzf_colors =
 " Ultisnips
 " directory must be in the runtime path!
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
-autocmd FileType snippets set noexpandtab
-autocmd FileType snippets set shiftwidth=2
-autocmd FileType snippets set tabstop=2
-autocmd FileType snippets set softtabstop=2
+augroup SnippetAuto
+  autocmd FileType snippets set noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
+augroup end
