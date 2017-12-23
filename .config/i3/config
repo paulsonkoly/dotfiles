@@ -172,4 +172,4 @@ client.background       #ffffff
 
 for_window [class="^.*"] border pixel 1
 
-exec_always --no-startup-id polybar bar0
+exec --no-startup-id polybar bar0
