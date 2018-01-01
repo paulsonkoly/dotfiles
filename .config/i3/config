@@ -186,6 +186,6 @@ client.unfocused        $normal_bg $normal_bg $normal_fg $normal_bg $normal_bg
 
 client.background       #ffffff
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 
 exec --no-startup-id polybar bar0
