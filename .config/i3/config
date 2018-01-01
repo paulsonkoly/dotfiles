@@ -22,7 +22,7 @@ set $focus_fg #bf472c
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Fira Mono Medium 8, Font Awesome 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -105,14 +105,14 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 set $workspace1 "1: "
-set $workspace2 "2: "
+set $workspace2 "2:   "
 set $workspace3 "3"
-set $workspace4 "4: 𝅘𝅥"
+set $workspace4 "4: "
 set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-set $workspace9 "9: "
+set $workspace9 "9: "
 set $workspace10 "10"
 
 assign [class="GVIM8"] $workspace1
