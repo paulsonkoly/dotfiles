@@ -6,8 +6,6 @@ setxkbmap gb
 
 source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 
-# background jpg
-feh --bg-fill $HOME/Downloads/tarun-ram-454974.jpg
 
 # exec dwm
 exec i3

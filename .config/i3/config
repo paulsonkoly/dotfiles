@@ -189,3 +189,4 @@ client.background       #ffffff
 for_window [class="^.*"] border pixel 2
 
 exec --no-startup-id polybar bar0
+exec_always --no-startup-id feh --bg-fill /home/phaul/Downloads/tarun-ram-454974.jpg
