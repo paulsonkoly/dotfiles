@@ -10,7 +10,7 @@
 [colors]
 foreground = #a4895c
 foreground-inverse = #bf472c
-foreground-faded = #a4895c
+foreground-faded = #4f3f3b
 background = #291916
 background-inverse = #291916
 background-raised = #291916
@@ -20,7 +20,7 @@ powerbutton = #e60053
 [bar/bar0]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 17
+height = 18
 fixed-center = false
 
 background = ${colors.background}
@@ -38,8 +38,8 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 0
 
-font-0 = DejaVu Sans Mono:pixelsize=8;2
-font-1 = Icons:pixelsize=9;2
+font-0 = Fira Mono Medium:pixelsize=8; 3
+font-1 = Font Awesome:pixelsize=9; 3
 
 modules-left = i3
 modules-center = xwindow
@@ -59,7 +59,6 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-faded}
 
 label-layout = %layout%
 
@@ -95,7 +94,7 @@ label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-foreground = ${colors.foreground-faded}
+label-unfocused-foreground = ${colors.foreground}
 label-unfocused-background = ${colors.background-raised}
 label-unfocused-padding = ${self.label-focused-padding}
 
@@ -114,15 +113,10 @@ type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
 icon-prev = 
-icon-prev-foreground = ${colors.foreground-faded}
 icon-stop = 
-icon-stop-foreground = ${colors.foreground-faded}
 icon-play = 
-icon-play-foreground = ${colors.foreground-faded}
 icon-pause = 
-icon-pause-foreground = ${colors.foreground-faded}
 icon-next = 
-icon-next-foreground = ${colors.foreground-faded}
 
 label-song-maxlen = 25
 label-song-ellipsis = true
@@ -130,15 +124,13 @@ label-song-ellipsis = true
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
-format-prefix-foreground = ${colors.foreground-faded}
+format-prefix = 
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "M"
-format-prefix-foreground = ${colors.foreground-faded}
+format-prefix = " "
 label = %percentage_used%%
 
 [module/wlan]
@@ -147,19 +139,18 @@ interface = wlan0
 interval = 3.0
 
 format-connected = <label-connected> <ramp-signal>
-label-connected = %{F#a4895c}%{F-} %essid::10:..%
+label-connected = %{F#a4895c}%{F-} %essid::10:..%
 
-format-disconnected = %{F#a4895c}%{F-} down
+format-disconnected = %{F#a4895c}%{F-} down
 
-ramp-signal-0 = ▁
-ramp-signal-1 = ▂
-ramp-signal-2 = ▃
-ramp-signal-3 = ▄
-ramp-signal-4 = ▅
-ramp-signal-5 = ▆
-ramp-signal-6 = ▇
-ramp-signal-7 = █
-ramp-signal-foreground = ${colors.foreground-faded}
+ramp-signal-0 = %{F#4f3f3b}━━━━━━━%{F-}
+ramp-signal-1 = ━%{F#4f3f3b}━━━━━━%{F-}
+ramp-signal-2 = ━━%{F#4f3f3b}━━━━━%{F-}
+ramp-signal-3 = ━━━%{F#4f3f3b}━━━━%{F-}
+ramp-signal-4 = ━━━━%{F#4f3f3b}━━━%{F-}
+ramp-signal-5 = ━━━━━%{F#4f3f3b}━━%{F-}
+ramp-signal-6 = ━━━━━━%{F#4f3f3b}━%{F-}
+ramp-signal-7 = ━━━━━━━
 
 [module/eth]
 type = internal/network
@@ -197,17 +188,9 @@ label-volume = ""
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-faded}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.foreground-faded}
-bar-volume-foreground-1 = ${colors.foreground-faded}
-bar-volume-foreground-2 = ${colors.foreground-faded}
-bar-volume-foreground-3 = ${colors.foreground-faded}
-bar-volume-foreground-4 = ${colors.foreground-faded}
-bar-volume-foreground-5 = ${colors.foreground-faded}
-bar-volume-foreground-6 = ${colors.foreground-faded}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -216,7 +199,7 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-faded}
+bar-volume-empty-foreground = ${colors.foreground}
 
 [module/battery]
 type = internal/battery
@@ -228,19 +211,16 @@ format-charging = <animation-charging> <label-charging>
 
 format-discharging = <ramp-capacity> <label-discharging>
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-faded}
+format-full-prefix = " "
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-faded}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-foreground = ${colors.foreground-faded}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -249,11 +229,9 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-faded}
+format-prefix = 
 format-warn = <label-warn>
-format-warn-prefix = " "
-format-warn-prefix-foreground = ${colors.foreground-faded}
+format-warn-prefix = 
 
 label = %temperature%
 label-warn = %temperature%
@@ -266,7 +244,7 @@ format-spacing = 1
 
 label-open = " "
 label-open-foreground = ${colors.powerbutton}
-label-close =  cancel
+label-close =  cancel
 label-close-foreground = ${colors.warning}
 label-separator = |
 label-separator-foreground = ${colors.foreground-inverse}
