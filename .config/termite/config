@@ -1,0 +1,33 @@
+[options]
+font = DejaVu Sans Mono 10
+
+[colors]
+foreground = #e0ccae
+background = #0f0908
+cursor     = #d47d49
+
+# Black + DarkGrey
+color0= #0f0908
+color8= #1f1311
+# DarkRed + Red
+color1= #bf472c
+color9= #df674c
+# DarkGreen + Green
+color2=  #a4896f
+color10= #c4a98f
+# DarkYellow + Yellow
+color3=  #f2a766
+color11= #ffc786
+# DarkBlue + Blue
+color4=  #d47d49
+color12= #f49d69
+# DarkMagenta + Magenta
+color5=  #8a4b53
+color13= #aa6b73
+#DarkCyan + Cyan
+color6=  #a67458
+color14= #c69478
+# LightGrey + White
+color7=  #e0ccae
+color15= #f2ddbc
+
