@@ -3,7 +3,7 @@ font = DejaVu Sans Mono 10
 
 [colors]
 foreground = #e0ccae
-background = #0f0908
+background = rgba(15, 9, 8, 0.9)
 cursor     = #d47d49
 
 # Black + DarkGrey
