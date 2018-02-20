@@ -110,7 +110,8 @@ augroup RubyAuto
   autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
 
   " insert a matching end
-  autocmd FileType ruby map <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
+  autocmd FileType ruby nnoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
+  autocmd FileType ruby inoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
 augroup end
 
 " highlight operators in ruby
