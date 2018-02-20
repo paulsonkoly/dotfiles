@@ -38,8 +38,8 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 0
 
-font-0 = Fira Mono Medium:pixelsize=8; 3
-font-1 = Font Awesome:pixelsize=9; 3
+font-0 = Fira Mono Medium:pixelsize=8; 2
+font-1 = Font Awesome:pixelsize=9; 2
 
 modules-left = i3
 modules-center = xwindow
