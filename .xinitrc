@@ -9,7 +9,7 @@ source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 # start information system
 cd $HOME/notify && bundle exec app/stuff.rb &
 
-wal -i Downloads/wallhaven-623995.jpg
+wal -R
 
 # exec dwm
 exec i3
