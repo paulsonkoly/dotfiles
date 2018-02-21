@@ -66,15 +66,6 @@ hi fzf1 guifg=#f80069 guibg=#291916
 hi fzf2 guifg=#b0e1bd guibg=#291916
 hi fzf3 guifg=#e9e9e9 guibg=#291916
 
-let g:gitgutter_sign_added = '++'
-let g:gitgutter_sign_modified = '~~'
-let g:gitgutter_sign_removed = '--'
-let g:gitgutter_sign_modified_removed = '~-'
-
-hi GitGutterAdd guifg=#0f2108
-hi GitGutterChange guifg=#272406
-hi GitGutterDelete guifg=#2f0908
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " statusline
 set laststatus=2
