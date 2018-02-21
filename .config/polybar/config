@@ -8,16 +8,16 @@
 ;=====================================================
 
 [colors]
-foreground = ${xrdb:color7:#222}
+foreground = ${xrdb:color8:#222}
 background = ${xrdb:color0:#222}
 
 foreground-inverse = ${xrdb:color0:#222}
 background-inverse = ${xrdb:color1:#222}
 
-foreground-faded = ${xrdb:color12:#222}
+foreground-faded = ${xrdb:color2:#222}
 background-raised = ${xrdb:color0:#222}
 
-foreground-prefix = ${xrdb:color1:#222}
+foreground-prefix = ${xrdb:color2:#222}
 
 warning = ${xrdb:color3:#222}
 powerbutton = ${xrdb:color3:#222}
@@ -107,7 +107,7 @@ label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %name%
-label-unfocused-foreground = ${colors.foreground}
+label-unfocused-foreground = ${colors.foreground-faded}
 label-unfocused-background = ${colors.background-raised}
 label-unfocused-padding = ${self.label-focused-padding}
 
@@ -150,6 +150,7 @@ label-connected = %essid::10:..%
 
 format-disconnected =  down
 
+ramp-signal-foreground = ${colors.foreground-prefix}
 ramp-signal-0 = ${env:POLYBAR_RAMP_0}
 ramp-signal-1 = ${env:POLYBAR_RAMP_1}
 ramp-signal-2 = ${env:POLYBAR_RAMP_2}

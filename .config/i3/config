@@ -12,7 +12,7 @@
 set $mod Mod4
 
 set_from_resource $normal_bg i3wm.color0
-set_from_resource $normal_fg i3wm.color7
+set_from_resource $normal_fg i3wm.color8
 set_from_resource $focus_bg i3wm.color1
 set_from_resource $focus_fg i3wm.color0
 
