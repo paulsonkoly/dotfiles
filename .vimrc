@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'fcpg/vim-farout'
+Plugin 'joshdick/onedark.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -59,12 +59,7 @@ set list
 
 syntax on
 
-colorscheme farout
-
-" this setup matches the fzf logo on a statusbar background
-hi fzf1 guifg=#f80069 guibg=#291916
-hi fzf2 guifg=#b0e1bd guibg=#291916
-hi fzf3 guifg=#e9e9e9 guibg=#291916
+colorscheme onedark
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " statusline
