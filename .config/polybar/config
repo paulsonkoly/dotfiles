@@ -148,7 +148,7 @@ format-disconnected-prefix-foreground=${colors.foreground-prefix}
 format-connected = <label-connected> <ramp-signal>
 label-connected = %essid::10:..%
 
-format-disconnected =  down
+format-disconnected = down
 
 ramp-signal-foreground = ${colors.foreground-prefix}
 ramp-signal-0 = ${env:POLYBAR_RAMP_0}
@@ -224,9 +224,12 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-prefix}
 
+ramp-capacity-foreground = ${colors.foreground-prefix}
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
+
+animation-charging-foreground = ${colors.foreground-prefix}
 
 animation-charging-0 = 
 animation-charging-1 = 
