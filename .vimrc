@@ -89,21 +89,9 @@ set wildmenu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " add the tags file from the root of each gem referenced from the current bundle
-"
-" tags files are expected to be located under the gem root. To achieve this
-" one can install ripper-tags and gem-ripper-tags. Then execute bundle exec
-" gem ripper_tags under the bundle root.
+" the current bundle is set by cwd
 function! SetBundlerTags()
-  ruby <<EOF
-    require 'bundler'
-
-    begin
-      Bundler.load.specs.map(&:full_gem_path).each do |path|
-        Vim.command("let &l:tags .= ',#{path}/tags'")
-      end
-    rescue Bundler::GemfileNotFound
-    end
-EOF
+  let &l:tags .= ',' . system('bundled.rb')
 endfunction
 
 augroup RubyAuto
