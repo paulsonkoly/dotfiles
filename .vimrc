@@ -86,6 +86,26 @@ set wildmenu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ruby stuff
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" add the tags file from the root of each gem referenced from the current bundle
+"
+" tags files are expected to be located under the gem root. To achieve this
+" one can install ripper-tags and gem-ripper-tags. Then execute bundle exec
+" gem ripper_tags under the bundle root.
+function! SetBundlerTags()
+  ruby <<EOF
+    require 'bundler'
+
+    begin
+      Bundler.load.specs.map(&:full_gem_path).each do |path|
+        Vim.command("let &l:tags .= ',#{path}/tags'")
+      end
+    rescue Bundler::GemfileNotFound
+    end
+EOF
+endfunction
+
 augroup RubyAuto
   autocmd FileType ruby nmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
   autocmd FileType ruby xmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
@@ -98,6 +118,8 @@ augroup RubyAuto
   " insert a matching end
   autocmd FileType ruby nnoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
   autocmd FileType ruby inoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
+
+  autocmd FileType ruby call SetBundlerTags()
 augroup end
 
 " highlight operators in ruby
