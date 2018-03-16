@@ -1,7 +1,11 @@
 [options]
 font = DejaVu Sans Mono 10
+; disables F11 key press (does the same as i3 fullscreen). F11 now works in
+; weechat ( nicklist scroll )
+fullscreen = 0
 
 [colors]
 background = rgba(15, 9, 8, 0.9)
 cursor     = #d47d49
 
+# vim: ft=dosini cms=#%s
