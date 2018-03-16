@@ -1,7 +1,7 @@
 [options]
 font = DejaVu Sans Mono 10
-; disables F11 key press (does the same as i3 fullscreen). F11 now works in
-; weechat ( nicklist scroll )
+# disables F11 key press (does the same as i3 fullscreen). F11 now works in
+# weechat ( nicklist scroll )
 fullscreen = 0
 
 [colors]
