@@ -12,6 +12,15 @@ source /usr/share/fzf/completion.bash
 (cat ~/.cache/wal/sequences &)
 complete -F _fzf_path_completion -o default -o bashdefault vlc
 
+# multi select fzf for installed package names
+# use $ pacman **<Tab> to trigger
+_fzf_complete_pacman() {
+  _fzf_complete '-m' "$@" < <(
+  command pacman -Qq
+  )
+}
+complete -F _fzf_complete_pacman -o default -o bashdefault pacman
+
 # colour man pages (https://wiki.archlinux.org/index.php/Color_output_in_console)
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \
