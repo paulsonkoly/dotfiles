@@ -8,8 +8,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'joshdick/onedark.vim'
 Plugin 'honza/vim-snippets'
+Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/vim-easy-align'
