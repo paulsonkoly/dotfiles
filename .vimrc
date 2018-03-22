@@ -78,11 +78,17 @@ set colorcolumn=80
 
 set spelllang=en_gb
 
+" remove the comment mark when J concatenating two comment lines
+set formatoptions+=j
+
 " this setting makes file related commands to look in sub folders recursively
 set path+=**
 
 " this is the tab menu for different options on finding files
 set wildmenu
+
+" allow to navigate away from unsaved buffers
+set hidden
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ruby stuff
@@ -112,6 +118,7 @@ augroup end
 
 " highlight operators in ruby
 let ruby_operators=1
+let ruby_spellcheck_strings=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " matchit for ruby do-end if-end etc
