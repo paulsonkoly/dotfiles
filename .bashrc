@@ -20,6 +20,7 @@ _fzf_complete_pacman() {
   )
 }
 complete -F _fzf_complete_pacman -o default -o bashdefault pacman
+complete -F _fzf_complete_pacman -o default -o bashdefault yay
 
 # colour man pages (https://wiki.archlinux.org/index.php/Color_output_in_console)
 man() {
