@@ -14,6 +14,8 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'kana/vim-textobj-user'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'SirVer/ultisnips'
@@ -163,3 +165,7 @@ let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 augroup SnippetAuto
   autocmd FileType snippets set noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
 augroup end
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gists
+let g:gist_use_password_in_gitconfig = 1
