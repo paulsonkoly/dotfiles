@@ -45,7 +45,9 @@ module-margin-right = 0
 
 font-0 = Fira Mono Medium:pixelsize=8; 2
 font-1 = Font Awesome 5 Free:style=Solid:pixelsize=9; 2
-font-2 = Font Awesome 5 Brands:pixelsize=9; 2
+font-2 = Font Awesome 5 Free:style=Regular:pixelsize=9; 2
+font-3 = Font Awesome 5 Brands:pixelsize=9; 2
+font-4 = Font Awesome 5 Free:style=Solid:pixelsize=7; 2
 
 modules-left = i3
 modules-center = xwindow
@@ -97,28 +99,35 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+ws-icon-0 = 1: shell;%{T5}%{T-}
+ws-icon-1 = 2: email;
+ws-icon-2 = 3: chat;
+ws-icon-3 = 4: music;
+ws-icon-4 = 5: ruby;%{T3}%{T-}
+ws-icon-5 = 9: www;
+
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
 ; focused = Active workspace on focused monitor
-label-focused = %name%
+label-focused = %index%: %icon%
 label-focused-foreground = ${colors.foreground-inverse}
 label-focused-background = ${colors.background-inverse}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
+label-unfocused = %index%: %icon%
 label-unfocused-foreground = ${colors.foreground-faded}
 label-unfocused-background = ${colors.background-raised}
 label-unfocused-padding = ${self.label-focused-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %index%: %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %index%: %icon%
 label-urgent-background = ${colors.warning}
 label-urgent-padding = ${self.label-focused-padding}
 
