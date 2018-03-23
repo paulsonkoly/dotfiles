@@ -44,7 +44,8 @@ module-margin-left = 2
 module-margin-right = 0
 
 font-0 = Fira Mono Medium:pixelsize=8; 2
-font-1 = Font Awesome:pixelsize=9; 2
+font-1 = Font Awesome 5 Free:style=Solid:pixelsize=9; 2
+font-2 = Font Awesome 5 Brands:pixelsize=9; 2
 
 modules-left = i3
 modules-center = xwindow
@@ -63,7 +64,7 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-prefix}
 
 label-layout = %layout%
