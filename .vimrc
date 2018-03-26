@@ -92,6 +92,9 @@ set wildmenu
 " allow to navigate away from unsaved buffers
 set hidden
 
+" highlight partial hits during a search
+set incsearch
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ruby stuff
 
