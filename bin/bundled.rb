@@ -14,4 +14,5 @@ require 'bundler'
 begin
   print Bundler.load.specs.map { |e| File.join(e.full_gem_path, 'tags') }.join(',')
 rescue Bundler::BundlerError
+rescue Gem::Exception
 end
