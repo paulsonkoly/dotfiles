@@ -51,7 +51,7 @@ font-4 = Font Awesome 5 Free:style=Solid:pixelsize=7; 2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = filesystem memory cpu wlan eth temperature volume battery date xkeyboard powermenu
+modules-right = gmail filesystem memory cpu wlan eth temperature volume battery date xkeyboard powermenu
 
 tray-position = right
 tray-padding = 2
@@ -291,6 +291,13 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/gmail]
+type = custom/script
+exec = gmail.rb
+tail = true
+format-prefix=" "
+format-prefix-foreground=${colors.foreground-prefix}
 
 [settings]
 screenchange-reload = true
