@@ -22,15 +22,38 @@
 
 require 'yaml'
 require 'gmail'
+require 'byebug'
 
 LOGIN_CONFIG=File.join(ENV['HOME'], 'gmail.yaml')
 
-login = File.open(LOGIN_CONFIG, 'r') { |io| YAML.load(io.read) }
+$login = File.open(LOGIN_CONFIG, 'r') { |io| YAML.load(io.read) }
 
-Gmail.connect(login['username'], login['password']) do |gmail|
+def connect
+  Gmail.connect($login['username'], $login['password'])
+end
+
+def loop_with_delay
   loop do
-    puts gmail.inbox.unseen.count
-    $stdout.flush
+    yield
     sleep 90
   end
+end
+
+def with_connection
+  gmail = connect
+  loop_with_delay do
+    if (gmail && gmail.logged_in?)
+      loop_with_delay do
+        break unless gmail.logged_in?
+        yield(gmail)
+      end
+    else
+      gmail = connect
+    end
+  end
+end
+
+with_connection do |gmail|
+  puts gmail.inbox.unseen.count
+  $stdout.flush
 end
