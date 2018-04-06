@@ -22,7 +22,6 @@
 
 require 'yaml'
 require 'gmail'
-require 'byebug'
 
 LOGIN_CONFIG=File.join(ENV['HOME'], 'gmail.yaml')
 
