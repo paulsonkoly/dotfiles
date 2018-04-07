@@ -10,5 +10,4 @@ start-pulseaudio-x11
 wal -R
 dunst.sh &
 
-# exec dwm
 exec i3
