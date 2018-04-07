@@ -39,15 +39,13 @@ def loop_with_delay
 end
 
 def with_connection
-  gmail = connect
+  gmail = nil
   loop_with_delay do
-    if (gmail && gmail.logged_in?)
-      loop_with_delay do
-        break unless gmail.logged_in?
-        yield(gmail)
-      end
+    if gmail && gmail.logged_in?
+      yield(gmail)
     else
       gmail = connect
+      redo if gmail.logged_in?
     end
   end
 end
