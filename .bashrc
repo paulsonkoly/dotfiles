@@ -12,11 +12,12 @@ source /usr/share/fzf/completion.bash
 (cat ~/.cache/wal/sequences &)
 complete -F _fzf_path_completion -o default -o bashdefault vlc
 
-# multi select fzf for installed package names
+# multi select fzf for package names (does not include not installed aur)
 # use $ pacman **<Tab> to trigger
 _fzf_complete_pacman() {
   _fzf_complete '-m' "$@" < <(
-  command pacman -Qq
+  command yay -Ssq # all package names not aur
+  command yay -Qq  # installed package names
   )
 }
 complete -F _fzf_complete_pacman -o default -o bashdefault pacman
