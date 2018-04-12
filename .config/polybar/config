@@ -20,7 +20,7 @@ background-raised = ${xrdb:color0:#222}
 foreground-prefix = ${xrdb:color2:#222}
 
 warning = ${xrdb:color3:#222}
-powerbutton = ${xrdb:color3:#222}
+active-led = ${xrdb:color1:#222}
 
 [bar/bar0]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -51,7 +51,7 @@ font-4 = Font Awesome 5 Free:style=Solid:pixelsize=7; 2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = gmail filesystem cpu temperature wlan eth volume battery date xkeyboard
+modules-right = volume gap gmail filesystem cpu temperature wlan eth battery date xkeyboard gap
 
 tray-position = right
 tray-padding = 2
@@ -210,15 +210,15 @@ format-muted-prefix = " "
 format-muted-prefix-foreground=${colors.foreground-prefix}
 label-muted = sound muted
 
-bar-volume-width = 7
+bar-volume-width = 10
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = ━
 bar-volume-indicator-font = 2
-bar-volume-indicator-foreground = ${colors.foreground}
-bar-volume-fill = ─
+bar-volume-indicator-foreground = ${colors.active-led}
+bar-volume-fill = ━
 bar-volume-fill-font = 2
 bar-volume-fill-foreground = ${colors.foreground-prefix}
-bar-volume-empty = ─
+bar-volume-empty = ━
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground}
 
@@ -271,6 +271,10 @@ exec = gmail.rb
 tail = true
 format-prefix=" "
 format-prefix-foreground=${colors.foreground-prefix}
+
+[module/gap]
+type = custom/text
+content = "   "
 
 [settings]
 screenchange-reload = true
