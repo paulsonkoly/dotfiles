@@ -23,6 +23,7 @@ Plugin 't9md/vim-ruby-xmpfilter'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'VundleVim/Vundle.vim'
 
 call vundle#end()            " required
@@ -66,7 +67,13 @@ colorscheme onedark
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " statusline
 set laststatus=2
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%y\ %-14.(%l,%c%V%)\ %P
+" left hand side
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}
+set statusline+=%=
+" right hand side
+"syntastic
+set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
+set statusline+=%y\ %-14.(%l,%c%V%)\ %P
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                     " show line numbers
