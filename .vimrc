@@ -119,6 +119,7 @@ augroup RubyAuto
   autocmd FileType ruby inoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
 
   autocmd FileType ruby call SetBundlerTags()
+  autocmd FileType ruby let &l:makeprg = 'ruby -c %'
 augroup end
 
 " highlight operators in ruby
