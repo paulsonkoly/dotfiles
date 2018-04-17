@@ -1,0 +1,3 @@
+# variable names like 'x', 'y' are perfectly valid for x, y coordinates
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
