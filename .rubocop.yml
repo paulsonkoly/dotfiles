@@ -1,3 +1,7 @@
 # variable names like 'x', 'y' are perfectly valid for x, y coordinates
 Naming/UncommunicativeMethodParamName:
   Enabled: false
+
+# it's hardly readable otherwise
+Layout/SpaceAfterNot:
+  Enabled: false
