@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
+PS1='\033[33m\u\033[32m@\h\033[33m \W\033[0m\$ '
 
 source /usr/share/fzf/completion.bash
 (cat ~/.cache/wal/sequences &)
