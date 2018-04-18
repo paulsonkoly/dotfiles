@@ -68,7 +68,9 @@ colorscheme onedark
 " statusline
 set laststatus=2
 " left hand side
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}
+set statusline=%<%f\ %h%m%r
+set statusline+=%#WildMenu#%{fugitive#statusline()}%*
+" left-right separator
 set statusline+=%=
 " right hand side
 "syntastic
