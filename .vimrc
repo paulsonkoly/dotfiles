@@ -126,7 +126,6 @@ augroup RubyAuto
   autocmd FileType ruby inoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
 
   autocmd FileType ruby call SetBundlerTags()
-  autocmd FileType ruby let &l:makeprg = 'ruby -c %'
 augroup end
 
 " highlight operators in ruby
@@ -180,3 +179,9 @@ augroup end
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gists
 let g:gist_use_password_in_gitconfig = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+nnoremap ]s :lnext<CR>
+nnoremap [s :lprevious<CR>
