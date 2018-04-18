@@ -5,3 +5,11 @@ Naming/UncommunicativeMethodParamName:
 # it's hardly readable otherwise
 Layout/SpaceAfterNot:
   Enabled: false
+
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+
+
+Style/DocumentationMethod:
+  Enabled: true
