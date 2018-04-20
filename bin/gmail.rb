@@ -23,7 +23,7 @@
 require 'yaml'
 require 'gmail'
 
-LOGIN_CONFIG=File.join(ENV['HOME'], 'gmail.yaml')
+LOGIN_CONFIG = File.join(ENV['HOME'], 'gmail.yaml')
 
 $login = File.open(LOGIN_CONFIG, 'r') { |io| YAML.load(io.read) }
 
