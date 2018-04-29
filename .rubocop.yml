@@ -13,3 +13,6 @@ Style/MethodCallWithArgsParentheses:
 
 Style/DocumentationMethod:
   Enabled: true
+
+Style/CharacterLiteral:
+  Enabled: false
