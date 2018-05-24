@@ -271,6 +271,7 @@ exec = gmail.rb
 tail = true
 format-prefix=" "
 format-prefix-foreground=${colors.foreground-prefix}
+click-left="firefox gmail.com"
 
 [module/gap]
 type = custom/text
