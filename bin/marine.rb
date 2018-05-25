@@ -2,6 +2,7 @@
 
 require 'nokogiri'
 require 'open-uri'
+require 'libnotify'
 
 module ShippingForecast
   URL = 'https://www.metoffice.gov.uk/public/weather/marine/shipping-forecast'
@@ -100,14 +101,17 @@ end
 general_report = ShippingForecast.general_report
 regional_report = ShippingForecast.regional_report('wight')
 
-print <<~EOR
-  #{general_report.issue_time}
-  #{general_report.period}
+Libnotify.new do |notify|
+  notify.summary = 'Shipping forecast'
+  notify.body = <<~EOR
+    #{general_report.issue_time}
+    #{general_report.period}
+    #{general_report.general_situation}
 
-  #{general_report.general_situation}
-  =============================================================================
-  Wight
+    ===================================
 
-  #{regional_report.to_s}
-EOR
-# >> "Issued at: 04:05 on Fri 25 May 2018 UTC\nFor the period 06:00 on Fri 25 May 2018 UTC to 06:00 on Sat 26 May 2018 UTC\n\nHigh 150 miles west of Shannon 1033 expected Norwegian Basin 1035 by midnight tonight\n=============================================================================\nWight\n\nWind: Variable becoming northeasterly 3 or 4, occasionally 5 later.\nSea state: Smooth or slight becoming slight or moderate.\nWeather: Showers later, perhaps thundery, fog patches.\nVisibility: Moderate or good, occasionally very poor.\n"
+    Wight
+    #{regional_report.to_s}
+  EOR
+  notify.timeout = false
+end.show!

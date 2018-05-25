@@ -51,7 +51,7 @@ font-4 = Font Awesome 5 Free:style=Solid:pixelsize=7; 2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = volume gap gmail filesystem cpu temperature wlan eth battery date xkeyboard gap
+modules-right = volume gap shipping_forecast gmail filesystem cpu temperature wlan eth battery date xkeyboard gap
 
 tray-position = right
 tray-padding = 2
@@ -272,6 +272,15 @@ tail = true
 format-prefix=" "
 format-prefix-foreground=${colors.foreground-prefix}
 click-left="firefox gmail.com"
+
+[module/shipping_forecast]
+# this is a hacky trick to use format prefixes nothing appears if content is empty
+type = custom/script
+exec = echo 'Wight'
+tail = false
+format-prefix=" "
+format-prefix-foreground=${colors.foreground-prefix}
+click-left="marine.rb"
 
 [module/gap]
 type = custom/text
