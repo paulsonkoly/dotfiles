@@ -16,3 +16,6 @@ Style/DocumentationMethod:
 
 Style/CharacterLiteral:
   Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.5
