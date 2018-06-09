@@ -171,6 +171,11 @@ let g:fzf_colors =
       \ 'header':  ['fg', 'Comment'] }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gitgutter
+let g:gitgutter_sign_added='┃'
+let g:gitgutter_sign_modified='┃'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ultisnips
 " directory must be in the runtime path!
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
