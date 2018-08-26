@@ -35,7 +35,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
-set guifont=Fira\ Mono\ Medium\ 11
+set guifont=Fantasque\ Sans\ Mono\ 11
 
 " breaking bad habits
 noremap  <Up>    <NOP>
