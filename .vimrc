@@ -1,3 +1,5 @@
+scriptencoding "utf-8"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-plug
 call plug#begin('~/.vim/plugged')
@@ -157,7 +159,7 @@ let g:gitgutter_sign_modified='┃'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ultisnips
 " directory must be in the runtime path!
-let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
+let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 augroup SnippetAuto
   autocmd FileType snippets set noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
 augroup end
@@ -171,3 +173,5 @@ let g:gist_use_password_in_gitconfig = 1
 let g:syntastic_always_populate_loc_list = 1
 nnoremap ]s :lnext<CR>
 nnoremap [s :lprevious<CR>
+
+let g:syntastic_vim_checkers = ['vint']

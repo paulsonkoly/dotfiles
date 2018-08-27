@@ -6,7 +6,7 @@ source $HOME/.cache/wal/colors.sh
 unset FZF_DEFAULT_OPTS # I like original don't need to alter fzf colours
 
 # bundle is before gem, so it has priority
-export PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin/:$HOME/bin
+export PATH=$PATH:$HOME/.gem/ruby/2.5.0/bin/:$HOME/bin:$HOME/.local/bin
 export TERMINAL=termite
 export POLYBAR_RAMP_0="%{F${color8}}━━━━━━━%{F-}"
 export POLYBAR_RAMP_1="━%{F${color8}}━━━━━━%{F-}"
