@@ -1,34 +1,27 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vundle stuff
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" vim-plug
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'airblade/vim-gitgutter'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'honza/vim-snippets'
+Plug 'joshdick/onedark.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'kana/vim-textobj-user'
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'noprompt/vim-yardoc'
+Plug 'SirVer/ultisnips'
+Plug 't9md/vim-ruby-xmpfilter'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'vim-syntastic/syntastic'
 
-Plugin 'airblade/vim-gitgutter'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'honza/vim-snippets'
-Plugin 'joshdick/onedark.vim'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'kana/vim-textobj-user'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'noprompt/vim-yardoc'
-Plugin 'SirVer/ultisnips'
-Plugin 't9md/vim-ruby-xmpfilter'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'VundleVim/Vundle.vim'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set guioptions-=m  "remove menu bar
