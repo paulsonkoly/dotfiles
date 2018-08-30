@@ -176,3 +176,16 @@ nnoremap ]s :lnext<CR>
 nnoremap [s :lprevious<CR>
 
 let g:syntastic_vim_checkers = ['vint']
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vader
+" assuming that % is the file under test, this re-sources % and runs vader on
+" it.
+function! Vadercall() abort
+  exec 'source %'
+  exec 'Vader ' . fnamemodify(@%, ':r') . '.vader'
+endfunction
+
+command! Vadercall call Vadercall()
+map <F2> :Vadercall<CR>
