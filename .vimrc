@@ -1,7 +1,8 @@
+" vim:fdm=marker
 scriptencoding "utf-8"
 
+" vim-plug {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-plug
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
@@ -25,15 +26,19 @@ Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 
 call plug#end()
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" }}} vim-plug "
 
+" gui {{{ "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guifont=Fantasque\ Sans\ Mono\ 11
+" }}} gui "
 
-" breaking bad habits
+" breaking bad habits {{{ "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap  <Up>    <NOP>
 inoremap <Up>    <NOP>
 noremap  <Down>  <NOP>
@@ -42,10 +47,10 @@ noremap  <Left>  <NOP>
 inoremap <Left>  <NOP>
 noremap  <Right> <NOP>
 inoremap <Right> <NOP>
+" breaking bad habits }}} "
 
-"
+" visual appearance {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" visual appearance
 " this needs to be *before* the first colour scheme command, otherwise it
 " might be overridden
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -60,9 +65,10 @@ set list
 syntax on
 
 colorscheme onedark
+" }}} visual appearance "
 
+" statusline {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" statusline
 set laststatus=2
 " left hand side
 set statusline=%<%f\ %h%m%r
@@ -73,7 +79,9 @@ set statusline+=%=
 "syntastic
 set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
 set statusline+=%y\ %-14.(%l,%c%V%)\ %P
+" }}} statusline "
 
+" generic global vim options {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number                     " show line numbers
 set relativenumber             " relative numbers to current line
@@ -100,10 +108,9 @@ set hidden
 
 " highlight partial hits during a search
 set incsearch
+" }}} generic global vim options "
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ruby stuff
-
+" ruby stuff {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " add the tags file from the root of each gem referenced from the current bundle
 " the current bundle is set by cwd
@@ -130,6 +137,7 @@ augroup end
 " highlight operators in ruby
 let ruby_operators=1
 let ruby_spellcheck_strings=1
+" }}} ruby stuff "
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " matchit for ruby do-end if-end etc
@@ -137,49 +145,51 @@ let ruby_spellcheck_strings=1
 " get the ends of the block.
 runtime macros/matchit.vim
 
+" grepping {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" grepping
 if executable('ag')
   set grepprg=ag\ --vimgrep\ --ignore-case
 endif
+" }}} grepping "
 
+" easy align {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" easy align
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
+" }}} easy align "
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gitgutter
 let g:gitgutter_sign_added='┃'
 let g:gitgutter_sign_modified='┃'
 
+" Ultisnips {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ultisnips
 " directory must be in the runtime path!
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 augroup SnippetAuto
   autocmd FileType snippets set noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
 augroup end
+" }}} Ultisnips "
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gists
 let g:gist_use_password_in_gitconfig = 1
 
+" Syntastic {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 nnoremap ]s :lnext<CR>
 nnoremap [s :lprevious<CR>
 
 let g:syntastic_vim_checkers = ['vint']
+" }}} Syntastic "
 
-
+" Vader {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vader
 " assuming that % is the file under test, this re-sources % and runs vader on
 " it.
 function! Vadercall() abort
@@ -189,3 +199,4 @@ endfunction
 
 command! Vadercall call Vadercall()
 map <F2> :Vadercall<CR>
+" }}} Vader "
