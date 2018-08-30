@@ -139,11 +139,13 @@ let ruby_operators=1
 let ruby_spellcheck_strings=1
 " }}} ruby stuff "
 
+" matchit {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " matchit for ruby do-end if-end etc
 " This is also required for ruby text objects to work, as the plugin uses % to
 " get the ends of the block.
 runtime macros/matchit.vim
+" }}} matchit "
 
 " grepping {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,10 +163,11 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " }}} easy align "
 
+" gitgutter {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" gitgutter
 let g:gitgutter_sign_added='┃'
 let g:gitgutter_sign_modified='┃'
+" }}} gitgutter "
 
 " Ultisnips {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -175,9 +178,10 @@ augroup SnippetAuto
 augroup end
 " }}} Ultisnips "
 
+" gists {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" gists
 let g:gist_use_password_in_gitconfig = 1
+" }}} gists "
 
 " Syntastic {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
