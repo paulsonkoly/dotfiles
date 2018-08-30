@@ -184,7 +184,7 @@ let g:syntastic_vim_checkers = ['vint']
 " it.
 function! Vadercall() abort
   exec 'source %'
-  exec 'Vader ' . fnamemodify(@%, ':r') . '.vader'
+  exec 'Vader ' . expand('%:r') . '.vader'
 endfunction
 
 command! Vadercall call Vadercall()
