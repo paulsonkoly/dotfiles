@@ -7,8 +7,10 @@ Layout/SpaceAfterNot:
   Enabled: false
 
 
-Style/MethodCallWithArgsParentheses:
-  Enabled: true
+# this seems to cause more trouble than what it solves: require, attr_*, DSL
+# stuff all works without parenthesis.
+# Style/MethodCallWithArgsParentheses:
+#   Enabled: true
 
 
 Style/DocumentationMethod:
