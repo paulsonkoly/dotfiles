@@ -21,3 +21,6 @@ Style/CharacterLiteral:
 
 AllCops:
   TargetRubyVersion: 2.5
+
+require:
+  rubocop-rspec
