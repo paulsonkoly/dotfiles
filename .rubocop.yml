@@ -24,3 +24,8 @@ AllCops:
 
 require:
   rubocop-rspec
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - spec/**/*
