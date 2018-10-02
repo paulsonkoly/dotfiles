@@ -199,7 +199,7 @@ time-alt = %H:%M:%S
 label = %date% %time%
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-volume = <bar-volume>
 format-volume-prefix = " "
@@ -261,8 +261,8 @@ format-warn-prefix-foreground = ${colors.foreground-prefix}
 format = <label>
 format-warn = <label-warn>
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.warning}
 
 [module/gmail]
