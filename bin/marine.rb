@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 # A small program started from polybar, to show uk shipping forecasts
 # Copyright © 2018 Paul Sonkoly
 
@@ -71,7 +73,7 @@ module ShippingForecast
   end
 
   class RegionalReport
-    ATTRIBUTES = %i(wind sea_state weather visibility)
+    ATTRIBUTES = %i(wind sea_state weather visibility).freeze
 
     def initialize(nokogiri_node_set)
       @nokogiri_node_set = nokogiri_node_set
