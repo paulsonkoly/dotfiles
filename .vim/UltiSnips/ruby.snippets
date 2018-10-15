@@ -35,3 +35,20 @@ RSpec.describe ${1:SomeModule} do
 	${0:${VISUAL}}
 end
 endsnippet
+
+snippet gem "gem definition in Gemfile" 'b'
+gem '$0'
+endsnippet
+
+snippet @!a "yard attribute"
+@!attribute [${2:r}] ${1:name}
+#   @return [${3:String}] ${0:description}
+endsnippet
+
+snippet @r "yard return"
+@return [${1:String}] ${0:description}
+endsnippet
+
+snippet @p "yard parameter"
+@param ${1:name} [${2:String}] ${0:description}
+endsnippet
