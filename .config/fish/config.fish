@@ -1,4 +1,6 @@
-cat $HOME/.cache/wal/sequences
+if status --is-interactive
+  cat $HOME/.cache/wal/sequences
+end
 
 set -x PATH $PATH $HOME/.gem/ruby/2.5.0/bin/ $HOME/bin $HOME/.local/bin
 
