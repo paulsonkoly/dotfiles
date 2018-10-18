@@ -278,7 +278,7 @@ click-left="firefox gmail.com"
 type = custom/script
 exec = echo 'Wight'
 tail = false
-format-prefix=" "
+format-prefix=" "
 format-prefix-foreground=${colors.foreground-prefix}
 click-left="marine.rb"
 
