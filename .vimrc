@@ -206,3 +206,11 @@ endfunction
 command! Vadercall call Vadercall()
 map <F2> :Vadercall<CR>
 " }}} Vader "
+
+" FZF {{{ "
+map <leader>f :Buffers<CR>
+" }}} FZF"
+
+" {{{ SplitJoin "
+let g:no_splitjoin_ruby_curly_braces=0
+" }}} SplitJoin "
