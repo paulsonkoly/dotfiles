@@ -15,6 +15,8 @@ export POLYBAR_RAMP_5="━━━━━%{F${color8}}━━%{F-}"
 export POLYBAR_RAMP_6="━━━━━━%{F${color8}}━%{F-}"
 export POLYBAR_RAMP_7="━━━━━━━"
 
+export NNN_COPIER=$HOME/bin/nnn_copier.sh
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
