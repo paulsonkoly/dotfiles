@@ -20,7 +20,7 @@ export NNN_COPIER=$HOME/bin/nnn_copier.sh
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-(cat .cache/wal/sequences &)
+(cat $HOME/.cache/wal/sequences &)
 
 alias ls='ls --color=auto'
 
