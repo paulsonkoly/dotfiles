@@ -177,11 +177,6 @@ augroup SnippetAuto
 augroup end
 " }}} Ultisnips "
 
-" gists {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:gist_use_password_in_gitconfig = 1
-" }}} gists "
-
 " Syntastic {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_always_populate_loc_list = 1
