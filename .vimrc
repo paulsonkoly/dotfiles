@@ -186,19 +186,6 @@ nnoremap [s :lprevious<CR>
 let g:syntastic_vim_checkers = ['vint']
 " }}} Syntastic "
 
-" Vader {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" assuming that % is the file under test, this re-sources % and runs vader on
-" it.
-function! Vadercall() abort
-  exec 'source %'
-  exec 'Vader ' . expand('%:r') . '.vader'
-endfunction
-
-command! Vadercall call Vadercall()
-map <F2> :Vadercall<CR>
-" }}} Vader "
-
 " FZF {{{ "
 map <leader>f :Buffers<CR>
 " }}} FZF"
