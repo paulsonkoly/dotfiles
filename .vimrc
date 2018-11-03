@@ -12,6 +12,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'lambdalisue/gina.vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'michaeljsmith/vim-indent-object'
@@ -20,7 +21,6 @@ Plug 'noprompt/vim-yardoc'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-ruby-xmpfilter'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 Plug 'wellle/targets.vim'
@@ -72,7 +72,6 @@ colorscheme onedark
 set laststatus=2
 " left hand side
 set statusline=%<%f\ %h%m%r
-set statusline+=%#WildMenu#%{fugitive#statusline()}%*
 " left-right separator
 set statusline+=%=
 " right hand side
