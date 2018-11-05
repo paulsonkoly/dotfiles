@@ -73,6 +73,7 @@ colorscheme onedark
 set laststatus=2
 " left hand side
 set statusline=%<%f\ %h%m%r
+set statusline+=%#WildMenu#%{gina#component#repo#preset('fancy')}%*
 " left-right separator
 set statusline+=%=
 " right hand side
