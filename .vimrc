@@ -70,16 +70,19 @@ colorscheme onedark
 
 " statusline {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi StatusLineFileType guifg=#98c379 guibg=#2c323c
+hi link StatusLineGit WildMenu
 set laststatus=2
 " left hand side
 set statusline=%<%f\ %h%m%r
-set statusline+=%#WildMenu#%{gina#component#repo#preset('fancy')}%*
+set statusline+=%#StatusLineGit#%{gina#component#repo#branch()}
+set statusline+=%{gina#component#status#preset('fancy')}%*
 " left-right separator
 set statusline+=%=
 " right hand side
 "syntastic
 set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
-set statusline+=%y\ %-14.(%l,%c%V%)\ %P
+set statusline+=%#StatusLineFileType#%y%*\ %-14.(%l,%c%V%)\ %P
 " }}} statusline "
 
 " generic global vim options {{{ "
