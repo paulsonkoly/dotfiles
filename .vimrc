@@ -167,11 +167,13 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " }}} easy align "
 
-" gitgutter {{{ "
+" Git VCS {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>g :Gina status<CR>
+map <leader>c :Gina commit<CR>
 let g:gitgutter_sign_added='┃'
 let g:gitgutter_sign_modified='┃'
-" }}} gitgutter "
+" }}} Git VCS "
 
 " Ultisnips {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
