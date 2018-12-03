@@ -178,7 +178,7 @@ let g:gitgutter_sign_modified='┃'
 " directory must be in the runtime path!
 let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
 augroup SnippetAuto
-  autocmd FileType snippets set noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType snippets setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
 augroup end
 " }}} Ultisnips "
 
