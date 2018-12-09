@@ -16,10 +16,10 @@ Plug 'lambdalisue/gina.vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'nelstrom/vim-markdown-folding'
-Plug 'noprompt/vim-yardoc'
+Plug 'nelstrom/vim-markdown-folding', { 'for': 'markdown' }
+Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'SirVer/ultisnips'
-Plug 't9md/vim-ruby-xmpfilter'
+Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
