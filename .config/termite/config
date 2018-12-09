@@ -5,7 +5,7 @@ font = DejaVu Sans Mono 10
 fullscreen = 0
 
 [colors]
-background = rgba(15, 9, 8, 0.9)
+background = rgba(15, 9, 8, 0.7)
 cursor     = #d47d49
 
 # vim: ft=dosini cms=#%s
