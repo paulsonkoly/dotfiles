@@ -198,8 +198,8 @@ augroup end
 " Syntastic {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_always_populate_loc_list = 1
-nnoremap ]s :lnext<CR>
-nnoremap [s :lprevious<CR>
+nnoremap ]l :lnext<CR>
+nnoremap [l :lprevious<CR>
 
 let g:syntastic_vim_checkers = ['vint']
 " }}} Syntastic "
