@@ -31,6 +31,37 @@ Plug 'wellle/targets.vim'
 call plug#end()
 " }}} vim-plug "
 
+" generic global vim options {{{ "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set number                     " show line numbers
+set relativenumber             " relative numbers to current line
+
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set smartindent
+set colorcolumn=80
+
+set spelllang=en_gb
+
+" remove the comment mark when J concatenating two comment lines
+set formatoptions+=j
+
+" this setting makes file related commands to look in sub folders recursively
+set path+=**
+
+" this is the tab menu for different options on finding files
+set wildmenu
+
+" allow to navigate away from unsaved buffers
+set hidden
+
+" highlight partial hits during a search
+set incsearch
+
+set rtp+=~/.vim/blah
+" }}} generic global vim options "
+
 " gui {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set guioptions-=m  "remove menu bar
@@ -87,35 +118,6 @@ set statusline+=%=
 set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
 set statusline+=%#StatusLineFileType#%y%*\ %-14.(%l,%c%V%)\ %P
 " }}} statusline "
-
-" generic global vim options {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set number                     " show line numbers
-set relativenumber             " relative numbers to current line
-
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set smartindent
-set colorcolumn=80
-
-set spelllang=en_gb
-
-" remove the comment mark when J concatenating two comment lines
-set formatoptions+=j
-
-" this setting makes file related commands to look in sub folders recursively
-set path+=**
-
-" this is the tab menu for different options on finding files
-set wildmenu
-
-" allow to navigate away from unsaved buffers
-set hidden
-
-" highlight partial hits during a search
-set incsearch
-" }}} generic global vim options "
 
 " ruby stuff {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
