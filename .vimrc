@@ -58,8 +58,6 @@ set hidden
 
 " highlight partial hits during a search
 set incsearch
-
-set rtp+=~/.vim/blah
 " }}} generic global vim options "
 
 " gui {{{ "
