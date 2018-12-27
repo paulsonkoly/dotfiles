@@ -125,14 +125,16 @@ function! SetBundlerTags()
   let &l:tags .= ',' . system('bundled.rb')
 endfunction
 
-augroup RubyAuto
-  autocmd FileType ruby nmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
-  autocmd FileType ruby xmap <buffer> <Leader>m <Plug>(xmpfilter-mark)
-  autocmd FileType ruby imap <buffer> <Leader>m <Plug>(xmpfilter-mark)
+let g:xmpfilter_cmd = 'seeing_is_believing'
 
-  autocmd FileType ruby nmap <buffer> <Leader>r <Plug>(xmpfilter-run)
-  autocmd FileType ruby xmap <buffer> <Leader>r <Plug>(xmpfilter-run)
-  autocmd FileType ruby imap <buffer> <Leader>r <Plug>(xmpfilter-run)
+augroup RubyAuto
+  autocmd FileType ruby nmap <buffer> <Leader>m <Plug>(seeing_is_believing-mark)
+  autocmd FileType ruby xmap <buffer> <Leader>m <Plug>(seeing_is_believing-mark)
+  autocmd FileType ruby imap <buffer> <Leader>m <Plug>(seeing_is_believing-mark)
+
+  autocmd FileType ruby nmap <buffer> <Leader>r <Plug>(seeing_is_believing-run_-x)
+  autocmd FileType ruby xmap <buffer> <Leader>r <Plug>(seeing_is_believing-run_-x)
+  autocmd FileType ruby imap <buffer> <Leader>r <Plug>(seeing_is_believing-run_-x)
 
   " insert a matching end
   autocmd FileType ruby nnoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
