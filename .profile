@@ -17,6 +17,9 @@ export POLYBAR_RAMP_7="━━━━━━━"
 
 export NNN_COPIER=$HOME/bin/nnn_copier.sh
 
+source /usr/share/chruby/chruby.sh
+export RUBIES=($HOME/.rubies/*)
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
