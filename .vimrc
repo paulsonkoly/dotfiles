@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'cocopon/iceberg.vim'
 Plug 'honza/vim-snippets'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
@@ -97,24 +98,23 @@ set list
 
 syntax on
 
-colorscheme onedark
+colorscheme iceberg
+set cursorline
 " }}} visual appearance "
 
 " statusline {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-hi StatusLineFileType guifg=#98c379 guibg=#2c323c
-hi link StatusLineGit WildMenu
 set laststatus=2
 " left hand side
 set statusline=%<%f\ %h%m%r
-set statusline+=%#StatusLineGit#%{gina#component#repo#branch()}
+set statusline+=%{gina#component#repo#branch()}
 set statusline+=%{gina#component#status#preset('fancy')}%*
 " left-right separator
 set statusline+=%=
 " right hand side
 "syntastic
 set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
-set statusline+=%#StatusLineFileType#%y%*\ %-14.(%l,%c%V%)\ %P
+set statusline+=%y%*\ %-14.(%l,%c%V%)\ %P
 " }}} statusline "
 
 " ruby stuff {{{ "

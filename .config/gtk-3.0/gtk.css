@@ -8,7 +8,7 @@
  * value is determined by gtk3 and matches the window default background
  * colour. This setting makes that match the vim colorscheme.
  */
-@define-color YOUR_BACKGROUND_COLOR #282c34;
+@define-color YOUR_BACKGROUND_COLOR #161821;
 
 window#vim-main-window {
     background-color: @YOUR_BACKGROUND_COLOR;
