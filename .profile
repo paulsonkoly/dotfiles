@@ -1,4 +1,5 @@
 # Non shell specific setup
+# vim:set ft=zsh:
 
 source $HOME/.cache/wal/colors.sh
 unset FZF_DEFAULT_OPTS # I like original don't need to alter fzf colours
