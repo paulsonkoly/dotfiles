@@ -24,6 +24,7 @@ Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'Pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
+Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
@@ -73,14 +74,7 @@ set guifont=Fantasque\ Sans\ Mono\ 11
 
 " breaking bad habits {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap  <Up>    <NOP>
-inoremap <Up>    <NOP>
-noremap  <Down>  <NOP>
-inoremap <Down>  <NOP>
-noremap  <Left>  <NOP>
-inoremap <Left>  <NOP>
-noremap  <Right> <NOP>
-inoremap <Right> <NOP>
+let g:hardtime_default_on = 1
 " breaking bad habits }}} "
 
 " visual appearance {{{ "
