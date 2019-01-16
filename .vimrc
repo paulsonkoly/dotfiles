@@ -184,6 +184,7 @@ nmap ga <Plug>(EasyAlign)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>g :Gina status<CR>
 map <leader>c :Gina commit<CR>
+map <leader>l :Gina log --graph --all<CR>
 let g:gitgutter_sign_added='┃'
 let g:gitgutter_sign_modified='┃'
 " }}} Git VCS "
