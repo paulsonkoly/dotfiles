@@ -29,3 +29,14 @@ Metrics/BlockLength:
   Enabled: true
   Exclude:
     - spec/**/*
+    - Rakefile
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/HashSyntax:
+  Exclude:
+    - Rakefile
+
+Style/AccessModifierDeclarations: 
+  Enabled: false
