@@ -22,6 +22,7 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'nelstrom/vim-markdown-folding', { 'for': 'markdown' }
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'Pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'simnalamburt/vim-mundo'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'takac/vim-hardtime'
