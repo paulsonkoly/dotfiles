@@ -25,7 +25,7 @@ export RUBIES=($HOME/.rubies/*)
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-(cat $HOME/.cache/wal/sequences &)
+[[ $TERM == 'xterm-termite' ]] && (cat $HOME/.cache/wal/sequences &)
 
 alias ls='ls --color=auto'
 
