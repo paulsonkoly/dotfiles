@@ -119,6 +119,24 @@ function! SetBundlerTags()
   let &l:tags .= ',' . system('bundled.rb')
 endfunction
 
+function! OpenRspecTerm() abort
+  terminal
+  exec "normal \<c-w>L"
+  exec 'file __rspec'
+  exec "normal \<c-w>\<c-w>"
+endfunction
+
+function! SendRspecToTerm() abort
+  if ! bufexists('__rspec')
+    call OpenRspecTerm()
+  endif
+
+  call term_sendkeys('__rspec', g:ruby_rspec_command)
+endfunction
+
+command! SendRSpec call SendRspecToTerm()
+
+let g:ruby_rspec_command = 'bundle exec rake spec'
 let g:xmpfilter_cmd = 'seeing_is_believing'
 
 augroup RubyAuto
@@ -133,6 +151,8 @@ augroup RubyAuto
   " insert a matching end
   autocmd FileType ruby nnoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
   autocmd FileType ruby inoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
+
+  autocmd FileType ruby nnoremap <buffer> <F5> :SendRSpec<CR>
 
   autocmd FileType ruby call SetBundlerTags()
 augroup end
