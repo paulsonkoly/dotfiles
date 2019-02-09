@@ -58,7 +58,6 @@ bindsym $mod+Shift+c kill
 #bindsym $mod+p exec dmenu_run
 bindsym $mod+p exec dmenu_run -i -fn 'Fira Mono Medium:pixelsize=12' -nb "$normal_bg" -nf "$normal_fg" -sf "$focus_fg" -sb "$focus_bg"
 bindsym $mod+Shift+q exec lock.sh -l blur
-bindsym $mod+Shift+i exec type.sh
 
 
 bindsym XF86AudioMute exec amixer set Master toggle
