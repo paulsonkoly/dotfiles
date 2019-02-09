@@ -23,6 +23,10 @@ Some setup is related to arch-linux and the yay package manager.
 Screenshots
 ===========
 
+These screenshots were taken in May/2018 and since then the look of the setup
+has changed slightly. If you are after re-creating the looks on the screenshot
+probably you should check out the commit that has the shots posted. (1c35ee42)
+
 Empty, with dunst notification:
 ![empty](screenshots/screenshot_empty.jpeg)
 
