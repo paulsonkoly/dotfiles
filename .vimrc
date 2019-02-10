@@ -17,10 +17,7 @@ Plug 'mattn/emmet-vim', { 'for': ['eruby', 'html'] }
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'nelstrom/vim-markdown-folding', { 'for': 'markdown' }
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
-Plug 'Pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'simnalamburt/vim-mundo'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
@@ -161,14 +158,6 @@ augroup end
 let ruby_operators=1
 let ruby_spellcheck_strings=1
 " }}} ruby stuff "
-
-" JS/JSX {{{ "
-let g:user_emmet_settings = {
-      \  'javascript.jsx' : {
-      \      'extends' : 'jsx',
-      \  },
-      \}
-" JS/JSX }}} "
 
 " matchit {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
