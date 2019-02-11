@@ -4,7 +4,7 @@ DOTFILES
 This repository contains the personal configuration files I use on my \*nix
 systems. The configuration files include setup for the following programs:
 
- * bash
+ * ~~bash~~ -> zsh
  * compton
  * dunst
  * fzf
