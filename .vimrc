@@ -16,6 +16,7 @@ Plug 'lambdalisue/gina.vim'
 Plug 'lambdalisue/vim-gista'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/emmet-vim', { 'for': ['eruby', 'html'] }
+Plug 'mcchrish/nnn.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'simnalamburt/vim-mundo'
@@ -220,3 +221,7 @@ map <leader>f :Buffers<CR>
 " {{{ SplitJoin "
 let g:no_splitjoin_ruby_curly_braces=0
 " }}} SplitJoin "
+
+" nnn {{{ "
+let g:nnn#replace_netrw=1
+" }}} nnn "
