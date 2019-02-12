@@ -13,10 +13,9 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'lambdalisue/gina.vim'
+Plug 'lambdalisue/vim-gista'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/emmet-vim', { 'for': ['eruby', 'html'] }
-Plug 'mattn/gist-vim'
-Plug 'mattn/webapi-vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'simnalamburt/vim-mundo'
