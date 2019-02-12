@@ -189,6 +189,11 @@ nmap ga <Plug>(EasyAlign)
 map <leader>g :Gina status<CR>
 map <leader>c :Gina commit<CR>
 map <leader>l :Gina log --graph --all<CR>
+
+" allow gina to discard directories with == oon Gina status. It asks for
+" confirmation anyways
+let g:gina#action#index#discard_directories=1
+
 let g:gitgutter_sign_added='┃'
 let g:gitgutter_sign_modified='┃'
 augroup GinaStatus
