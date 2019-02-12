@@ -25,6 +25,7 @@ Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 Plug 'wellle/targets.vim'
 
@@ -90,24 +91,20 @@ set list
 
 syntax on
 
+" -- Insert -- on the command line
+set noshowmode
+
 colorscheme iceberg
 set cursorline
 " }}} visual appearance "
 
-" statusline {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set laststatus=2
-" left hand side
-set statusline=%<%f\ %h%m%r
-set statusline+=%{gina#component#repo#branch()}
-set statusline+=%{gina#component#status#preset('fancy')}%*
-" left-right separator
-set statusline+=%=
-" right hand side
-"syntastic
-set statusline+=%#warningmsg#%{SyntasticStatuslineFlag()}%*
-set statusline+=%y%*\ %-14.(%l,%c%V%)\ %P
-" }}} statusline "
+" airline {{{ "
+let g:airline_powerline_fonts = 1
+" disable orange - red syntastic bits when no warning/error
+let w:airline_skip_empty_sections = 1
+call airline#parts#define_function('gina', 'gina#component#repo#branch')
+let g:airline_section_b = airline#section#create(['hunks', g:airline_symbols.branch,'gina'])
+" }}} airline "
 
 " ruby stuff {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
