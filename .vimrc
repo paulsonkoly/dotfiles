@@ -74,6 +74,7 @@ set guifont=Fantasque\ Sans\ Mono\ 11
 " breaking bad habits {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:hardtime_default_on = 1
+let g:hardtime_ignore_buffer_patterns = [ 'nnn' ]
 " breaking bad habits }}} "
 
 " visual appearance {{{ "
