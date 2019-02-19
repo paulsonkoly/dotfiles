@@ -10,7 +10,7 @@ exec dunst \
   -cb "${color0:-#FFFFFF}" \
   -lf "${color8:-#000000}" \
   -nf "${color8:-#000000}" \
-  -cf "${color3:-#000000}" \
+  -cf "#e27878" \
   -lfr "${color0:-#800000}" \
   -nfr "${color0:-#800000}" \
   -cfr "${color0:-#800000}"
