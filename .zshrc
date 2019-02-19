@@ -17,6 +17,8 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 source $HOME/.profile
-source $HOME/minimal/minimal.zsh
+source $HOME/.zsh/minimal/minimal.zsh
+source /home/phaul/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
