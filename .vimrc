@@ -19,7 +19,6 @@ Plug 'mattn/emmet-vim', { 'for': ['eruby', 'html'] }
 Plug 'mcchrish/nnn.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'nelstrom/vim-markdown-folding', { 'for': 'markdown' }
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'Pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'simnalamburt/vim-mundo'
