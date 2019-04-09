@@ -5,6 +5,7 @@ scriptencoding "utf-8"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
+Plug 'carmonw/elm-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'cocopon/iceberg.vim'
@@ -167,6 +168,12 @@ let g:user_emmet_settings = {
       \  },
       \}
 " JS/JSX }}} "
+
+" Elm {{{ "
+augroup ElmAuto
+  autocmd FileType elm setlocal shiftwidth=4 softtabstop=4
+augroup end
+" }}} Elm "
 
 " matchit {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
