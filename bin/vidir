@@ -15,6 +15,8 @@ tmpfile = Tempfile.new
 list.each { |entry| tmpfile.puts(entry) }
 tmpfile.flush
 
+# for whatever reason when it's triggered from the nnn plugin, it has issues
+# system('vim', '--remote-tab-wait', tmpfile.path) or abort 'vimming failed'
 system("vim #{tmpfile.path}") or abort 'vimming failed'
 
 tmpfile.rewind
