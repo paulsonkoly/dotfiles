@@ -4,7 +4,7 @@
 source $HOME/.cache/wal/colors.sh
 unset FZF_DEFAULT_OPTS # I like original don't need to alter fzf colours
 
-export PATH=$PATH:`ruby -e 'puts File.join(Gem.user_dir, "bin")'`:$HOME/bin:$HOME/.local/bin
+export PATH=$PATH:`ruby -e 'puts File.join(Gem.user_dir, "bin")'`:$HOME/bin:$HOME/.local/bin:$HOME/.npm-packages/bin
 
 export TERMINAL=termite
 
