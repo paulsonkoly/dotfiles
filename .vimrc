@@ -25,7 +25,6 @@ Plug 'Pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'simnalamburt/vim-mundo'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
-Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -73,12 +72,6 @@ set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=e  "no gui tab-bar
 set guifont=Fantasque\ Sans\ Mono\ 11
 " }}} gui "
-
-" breaking bad habits {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:hardtime_default_on = 1
-let g:hardtime_ignore_buffer_patterns = [ 'nnn' ]
-" breaking bad habits }}} "
 
 " visual appearance {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
