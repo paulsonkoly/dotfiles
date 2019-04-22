@@ -16,7 +16,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'lambdalisue/gina.vim'
 Plug 'lambdalisue/vim-gista'
 Plug 'machakann/vim-highlightedyank'
-Plug 'mattn/emmet-vim', { 'for': ['eruby', 'html'] }
+Plug 'mattn/emmet-vim'
 Plug 'mcchrish/nnn.vim'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
