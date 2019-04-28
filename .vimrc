@@ -10,6 +10,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'carmonw/elm-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'honza/vim-snippets'
+Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -22,6 +23,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'Pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'rickhowe/diffchar.vim'
 Plug 'simnalamburt/vim-mundo'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
