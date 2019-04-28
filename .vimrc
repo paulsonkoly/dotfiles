@@ -198,7 +198,7 @@ map <leader>g :Gina status<CR>
 map <leader>c :Gina commit<CR>
 map <leader>l :Gina log --graph --all<CR>
 
-" allow gina to discard directories with == oon Gina status. It asks for
+" allow gina to discard directories with == on Gina status. It asks for
 " confirmation anyways
 let g:gina#action#index#discard_directories=1
 
