@@ -65,6 +65,41 @@ set hidden
 set incsearch
 " }}} generic global vim options "
 
+function! OpenTerminal() abort
+  terminal
+  exec "normal \<c-w>o"
+endfunction
+
+nnoremap <F6> :call OpenTerminal()<CR>
+tnoremap <F6> <C-W>:call OpenTerminal()<CR>
+
+function! OpenCmdTerm() abort
+  terminal
+  exec "normal \<c-w>L"
+  exec 'file __cmd_window'
+  exec "normal \<c-w>\<c-w>"
+endfunction
+
+function! SendCmdToTerm() abort
+  if ! bufexists('__cmd_window')
+    call OpenCmdTerm()
+  endif
+
+  if exists('b:cmd_command')
+    let l:cmd = b:cmd_command
+  else
+    let l:cmd = g:cmd_command
+  endif
+
+  call term_sendkeys('__cmd_window', l:cmd)
+endfunction
+
+command! SendCmd call SendCmdToTerm()
+
+let g:cmd_command = 'bundle exec rake spec'
+
+nnoremap <F5> :w<CR>:SendCmd<CR>
+
 " gui {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set guioptions-=m  "remove menu bar
@@ -113,24 +148,6 @@ function! SetBundlerTags()
   let &l:tags .= ',' . system('bundled.rb')
 endfunction
 
-function! OpenRspecTerm() abort
-  terminal
-  exec "normal \<c-w>L"
-  exec 'file __rspec'
-  exec "normal \<c-w>\<c-w>"
-endfunction
-
-function! SendRspecToTerm() abort
-  if ! bufexists('__rspec')
-    call OpenRspecTerm()
-  endif
-
-  call term_sendkeys('__rspec', g:ruby_rspec_command)
-endfunction
-
-command! SendRSpec call SendRspecToTerm()
-
-let g:ruby_rspec_command = 'bundle exec rake spec'
 let g:xmpfilter_cmd = 'seeing_is_believing'
 
 augroup RubyAuto
@@ -145,8 +162,6 @@ augroup RubyAuto
   " insert a matching end
   autocmd FileType ruby nnoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
   autocmd FileType ruby inoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
-
-  autocmd FileType ruby nnoremap <buffer> <F5> :SendRSpec<CR>
 
   autocmd FileType ruby call SetBundlerTags()
 augroup end
