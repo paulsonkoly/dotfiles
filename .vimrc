@@ -5,9 +5,9 @@ scriptencoding "utf-8"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-Plug 'carmonw/elm-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'carmonw/elm-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf'
