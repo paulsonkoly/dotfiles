@@ -108,7 +108,7 @@ set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=e  "no gui tab-bar
-set guifont=Fantasque\ Sans\ Mono\ 11
+set guifont=Fantasque\ Sans\ Mono\ 12
 " }}} gui "
 
 " visual appearance {{{ "
