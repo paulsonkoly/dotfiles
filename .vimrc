@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'bitc/vim-hdevtools'
 Plug 'carmonw/elm-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'honza/vim-snippets'
