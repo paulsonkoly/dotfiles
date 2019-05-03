@@ -141,37 +141,6 @@ call airline#parts#define_function('gina', 'gina#component#repo#branch')
 let g:airline_section_b = airline#section#create(['hunks', g:airline_symbols.branch,'gina'])
 " }}} airline "
 
-" ruby stuff {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" add the tags file from the root of each gem referenced from the current bundle
-" the current bundle is set by cwd
-function! SetBundlerTags()
-  let &l:tags .= ',' . system('bundled.rb')
-endfunction
-
-let g:xmpfilter_cmd = 'seeing_is_believing'
-
-augroup RubyAuto
-  autocmd FileType ruby nmap <buffer> <Leader>m <Plug>(seeing_is_believing-mark)
-  autocmd FileType ruby xmap <buffer> <Leader>m <Plug>(seeing_is_believing-mark)
-  autocmd FileType ruby imap <buffer> <Leader>m <Plug>(seeing_is_believing-mark)
-
-  autocmd FileType ruby nmap <buffer> <Leader>r <Plug>(seeing_is_believing-run_-x)
-  autocmd FileType ruby xmap <buffer> <Leader>r <Plug>(seeing_is_believing-run_-x)
-  autocmd FileType ruby imap <buffer> <Leader>r <Plug>(seeing_is_believing-run_-x)
-
-  " insert a matching end
-  autocmd FileType ruby nnoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
-  autocmd FileType ruby inoremap <buffer> <S-CR> <Esc>A<CR><CR>end<Esc>-cc
-
-  autocmd FileType ruby call SetBundlerTags()
-augroup end
-
-" highlight operators in ruby
-let ruby_operators=1
-let ruby_spellcheck_strings=1
-" }}} ruby stuff "
-
 " JS/JSX {{{ "
 let g:user_emmet_settings = {
       \  'javascript.jsx' : {
