@@ -46,6 +46,10 @@ module ShippingForecast
     def self.stripped(str)
       str.to_s.gsub(/\n */, ' ').strip
     end
+
+    def self.dashize(str)
+      str.to_s.gsub('_', '-')
+    end
   end
 
   class GeneralReport
@@ -53,22 +57,19 @@ module ShippingForecast
       @nokogiri_node_set = nokogiri_node_set
     end
 
-    { issue_time: 'div', period: 'p' }.each do |sym, selector|
+    %w(synopsis_time synopsis_text).each do |sym|
       define_method(sym) do
-        elem = @nokogiri_node_set.css("#{selector}.#{StringUtils.camel_case(sym)}")
+        sel = StringUtils.dashize(sym)
+        elem = @nokogiri_node_set.css("p.#{sel}")
         StringUtils.stripped(elem.first.content)
       end
     end
 
-    def general_situation
-      general_situation = @nokogiri_node_set.css('h2')
-      general_situation_content = general_situation.first.next_element
-      StringUtils.stripped(general_situation_content.content)
-    end
+    alias synopsis synopsis_text 
 
-    def regions
-      regions = @nokogiri_node_set.css('select#marineRegionSelect option')
-      regions[1..-1].map(&:content) # remove all areas option
+    def sea_forecast_time
+      ps = @nokogiri_node_set.css("div#sea-forecast-time>p").map(&:content)
+      StringUtils.stripped(ps[0]) + "\n" + StringUtils.stripped(ps[1])
     end
   end
 
@@ -96,13 +97,12 @@ module ShippingForecast
 
   class << self
     def general_report
-      section = nokogiri_doc.css('div.marineSection')
+      section = nokogiri_doc.css('div#summary')
       GeneralReport.new(section)
     end
 
     def regional_report(region)
-      regional = nokogiri_doc.css('div.cardContainer')
-      region_node = regional.css("div[data-value=\"#{StringUtils.condense(region)}\"]")
+      region_node = nokogiri_doc.css("div.marine-card##{StringUtils.condense(region)}")
       RegionalReport.new(region_node)
     end
 
@@ -126,9 +126,9 @@ regional_report = ShippingForecast.regional_report('wight')
 Libnotify.new do |notify|
   notify.summary = 'Shipping forecast'
   notify.body = <<~EOR
-    #{general_report.issue_time}
-    #{general_report.period}
-    #{general_report.general_situation}
+    #{general_report.synopsis_time}\n
+    #{general_report.sea_forecast_time}\n
+    #{general_report.synopsis}\n
 
     ===================================
 
