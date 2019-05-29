@@ -47,3 +47,16 @@ man() {
     LESS_TERMCAP_us=$'\e[01;32m' \
     command man "$@"
 }
+
+# multi select fzf for package names
+# use $ pacman **<Tab> to trigger
+_fzf_complete_yay() {
+  _fzf_complete '-m' "$@" < <(
+  command yay -Pc | cut -f1 -d' '
+  )
+}
+
+_fzf_complete_yay_post() {
+  awk '{print $1}'
+}
+
