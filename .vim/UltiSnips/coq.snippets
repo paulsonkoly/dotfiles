@@ -21,8 +21,18 @@
 
 priority 50
 
+snippet ass "assert"
+assert (L: $1). {
+  $0
+}
+endsnippet
+
+snippet gen "generalize dependent"
+generalize dependent $0.
+endsnippet
+
 snippet r "reflexivity."
-reflexivity. $0
+reflexivity.
 endsnippet
 
 snippet Q "Qed."
@@ -34,9 +44,16 @@ induction $1${2: as [${0:|}]}.
 endsnippet
 
 snippet re "rewrite"
-rewrite ${1:<- }$2 ${3:in ${4}}.
+rewrite ${1:<- }$2${3: in ${4}}.
 endsnippet
 
+snippet rep "replace"
+replace ($1) with ($2)$0.
+endsnippet
+
+snippet rem "remember"
+remember $1 as $2.
+endsnippet
 
 snippet inv "inversion"
 inversion $0.
@@ -56,6 +73,14 @@ endsnippet
 
 snippet dis "discriminate"
 discriminate $0.
+endsnippet
+
+snippet int "intros"
+intros $0.
+endsnippet
+
+snippet unf "unfold"
+unfold $0.
 endsnippet
 
 snippet spl "split"
