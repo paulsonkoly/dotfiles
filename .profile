@@ -15,6 +15,7 @@ PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 export PATH
 
 export TERMINAL=termite
+export EDITOR=vim
 
 export POLYBAR_RAMP_0="%{F${color8}}━━━━━━━%{F-}"
 export POLYBAR_RAMP_1="━%{F${color8}}━━━━━━%{F-}"
