@@ -147,6 +147,8 @@ let g:airline_powerline_fonts = 1
 let w:airline_skip_empty_sections = 1
 call airline#parts#define_function('gina', 'gina#component#repo#branch')
 let g:airline_section_b = airline#section#create(['hunks', g:airline_symbols.branch,'gina'])
+let g:airline_right_sep=''
+let g:airline_left_sep=''
 " }}} airline "
 
 " JS/JSX {{{ "
