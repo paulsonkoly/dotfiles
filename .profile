@@ -33,8 +33,6 @@ export RUBIES=($HOME/.rubies/*)
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[[ $TERM == 'xterm-termite' ]] && (cat $HOME/.cache/wal/sequences &)
-
 alias ls='ls --color=auto'
 
 # colour man pages (https://wiki.archlinux.org/index.php/Color_output_in_console)
