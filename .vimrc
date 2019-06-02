@@ -106,6 +106,9 @@ let g:cmd_command = 'bundle exec rake spec'
 
 nnoremap <F5> :w<CR>:SendCmd<CR>
 
+" the default C-s freezes the terminal. C-z in insert is close enough.
+imap <C-z> <Plug>Isurround
+
 " gui {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set guioptions-=m  "remove menu bar
