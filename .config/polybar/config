@@ -25,25 +25,24 @@ active-led = ${xrdb:color1:#222}
 [bar/bar0]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 18
+height = 20
 fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
+underline-size = 0
 
-border-size = 0
-border-color = #000
+border-bottom-size = 1
+border-bottom-color = ${xrdb:color1:#222}
 
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 2
+module-margin-left = 3
 module-margin-right = 0
 
-font-0 = Fira Mono Medium:pixelsize=8; 2
+font-0 = Fantasque Sans Mono 8:pixelsize=10; 2
 font-1 = Font Awesome 5 Free:style=Solid:pixelsize=9; 2
 font-2 = Font Awesome 5 Free:style=Regular:pixelsize=9; 2
 font-3 = Font Awesome 5 Brands:pixelsize=9; 2
@@ -51,7 +50,7 @@ font-4 = Font Awesome 5 Free:style=Solid:pixelsize=7; 2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = volume gap shipping_forecast gmail filesystem cpu temperature wlan eth battery date xkeyboard gap
+modules-right = volume gap shipping_forecast gmail filesystem cpu memory temperature wlan eth battery date xkeyboard gap
 
 tray-position = right
 tray-padding = 2
@@ -99,12 +98,12 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-ws-icon-0 = 1: shell;%{T5}%{T-}
-ws-icon-1 = 2: email;
-ws-icon-2 = 3: chat;
-ws-icon-3 = 4: music;
-ws-icon-4 = 5: ruby;%{T3}%{T-}
-ws-icon-5 = 9: www;
+ws-icon-0 = "1: shell; %{T5}%{T-} "
+ws-icon-1 = "2: email;  "
+ws-icon-2 = "3: chat;  "
+ws-icon-3 = "4: music; %{T2}%{T-} "
+ws-icon-4 = "5: ruby; %{T3}%{T-} "
+ws-icon-5 = "9: www;  "
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
@@ -253,8 +252,8 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format-prefix = 
-format-warn-prefix = 
+format-prefix = " "
+format-warn-prefix = " "
 format-prefix-foreground = ${colors.foreground-prefix}
 format-warn-prefix-foreground = ${colors.foreground-prefix}
 
