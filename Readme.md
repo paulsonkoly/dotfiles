@@ -4,7 +4,7 @@ DOTFILES
 This repository contains the personal configuration files I use on my \*nix
 systems. The configuration files include setup for the following programs:
 
- * ~~bash~~ -> zsh
+ * zsh
  * compton
  * dunst
  * fzf
@@ -23,18 +23,21 @@ Some setup is related to arch-linux and the yay package manager.
 Screenshots
 ===========
 
-These screenshots were taken in May/2018 and since then the look of the setup
+These screenshots were taken in Jul/2019 and since then the look of the setup
 has changed slightly. If you are after re-creating the looks on the screenshot
-probably you should check out the commit that has the shots posted. (1c35ee42)
-
-Empty, with dunst notification:
-![empty](screenshots/screenshot_empty.jpeg)
+probably you should check out the commit that has the shots posted. (021715c2)
 
 Fake busy:
-![fake busy](screenshots/screenshot_fake_busy.jpeg)
+![fake busy](screenshots/vim_with_haskell.png)
+
+Weechat:
+![weechat](screenshots/weechat.png)
+
+Empty, with dunst notification:
+![empty](screenshots/empty.png)
 
 Wallpaper
 =========
 
-[link](https://alpha.wallhaven.cc/wallpaper/623995)
+[link](http://simpledesktops.com/browse/desktops/2016/oct/12/hydrogen-remixed/)
 
