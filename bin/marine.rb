@@ -27,7 +27,7 @@ require 'open-uri'
 require 'libnotify'
 
 module ShippingForecast
-  URL = 'https://www.metoffice.gov.uk/public/weather/marine/shipping-forecast'
+  URL = 'https://www.metoffice.gov.uk/weather/specialist-forecasts/coast-and-sea/shipping-forecast'
 
   module StringUtils
     def self.capitalize(str)
