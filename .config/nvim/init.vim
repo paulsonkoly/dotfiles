@@ -1,3 +1,5 @@
+" vim:fdm=marker
+
 " vim-plug {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.local/share/nvim/plugged')
@@ -28,7 +30,6 @@ Plug 'wellle/targets.vim'
 
 call plug#end()
 " }}} vim-plug "
-
 
 " visual appearance {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
