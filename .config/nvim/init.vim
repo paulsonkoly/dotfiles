@@ -4,28 +4,19 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'carmonw/elm-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'honza/vim-snippets'
-"Plug 'https://manu@framagit.org/manu/coq-au-vim.git'
-" coqprooject file support
-Plug 'https://framagit.org/adamatousek/coq-au-vim.git'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'jvoorhis/coq.vim'
 Plug 'lambdalisue/gina.vim'
 Plug 'lambdalisue/vim-gista'
 Plug 'machakann/vim-highlightedyank'
-Plug 'mattn/emmet-vim'
 Plug 'mcchrish/nnn.vim'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
-Plug 'Pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'rickhowe/diffchar.vim'
-Plug 'simnalamburt/vim-mundo'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'tpope/vim-commentary'
