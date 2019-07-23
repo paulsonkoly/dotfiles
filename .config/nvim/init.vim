@@ -52,6 +52,25 @@ set cursorline
 
 " }}} visual appearance "
 
+" airline {{{ "
+let g:airline_powerline_fonts = 1
+" disable orange - red syntastic bits when no warning/error
+let w:airline_skip_empty_sections = 1
+call airline#parts#define_function('gina', 'gina#component#repo#branch')
+let g:airline_section_b = airline#section#create(['hunks', g:airline_symbols.branch,'gina'])
+let g:airline_right_sep=''
+let g:airline_left_sep=''
+" }}} airline "
+
+" easy align {{{ "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" }}} easy align "
+
 " Git VCS {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>g :Gina status<CR>
@@ -69,3 +88,14 @@ augroup GinaStatus
 augroup end
 " }}} Git VCS "
 
+" FZF {{{ "
+map <leader>f :Buffers<CR>
+" }}} FZF"
+
+" {{{ SplitJoin "
+let g:no_splitjoin_ruby_curly_braces=0
+" }}} SplitJoin "
+
+" nnn {{{ "
+let g:nnn#replace_netrw=1
+" }}} nnn "
