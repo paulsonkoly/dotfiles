@@ -11,6 +11,5 @@ start-pulseaudio-x11
 xset b off
 
 wal -R
-dunst.sh &
 
 exec i3
