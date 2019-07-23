@@ -31,6 +31,12 @@ Plug 'wellle/targets.vim'
 call plug#end()
 " }}} vim-plug "
 
+" generic global vim options {{{ "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" the default C-s freezes the terminal. C-z in insert is close enough.
+imap <C-z> <Plug>Isurround
+" }}} generic global vim options "
+
 " visual appearance {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " this needs to be *before* the first colour scheme command, otherwise it
