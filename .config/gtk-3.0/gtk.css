@@ -13,3 +13,7 @@
 window#vim-main-window {
     background-color: @YOUR_BACKGROUND_COLOR;
 }
+
+.termite {
+    padding: 4px;
+}
