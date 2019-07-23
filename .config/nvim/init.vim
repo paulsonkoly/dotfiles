@@ -17,15 +17,16 @@ Plug 'lambdalisue/vim-gista'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mcchrish/nnn.vim'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'neomake/neomake'
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
+Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
 Plug 'rickhowe/diffchar.vim'
 Plug 'SirVer/ultisnips'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'Twinside/vim-hoogle'
+Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 Plug 'vim-airline/vim-airline'
-Plug 'vim-syntastic/syntastic'
 Plug 'wellle/targets.vim'
 
 call plug#end()
