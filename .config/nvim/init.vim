@@ -35,6 +35,8 @@ call plug#end()
 " generic global vim options {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " the default C-s freezes the terminal. C-z in insert is close enough.
+set number
+set relativenumber
 imap <C-z> <Plug>Isurround
 " }}} generic global vim options "
 
