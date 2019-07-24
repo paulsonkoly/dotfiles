@@ -35,6 +35,7 @@ export RUBIES=($HOME/.rubies/*)
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+alias vim=nvim
 
 # colour man pages (https://wiki.archlinux.org/index.php/Color_output_in_console)
 man() {
