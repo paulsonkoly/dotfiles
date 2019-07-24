@@ -47,16 +47,20 @@ set colorcolumn=80
 imap <C-z> <Plug>Isurround
 " }}} generic global vim options "
 
-" visual appearance {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" this needs to be *before* the first colour scheme command, otherwise it
-" might be overridden
+" Colorcheme overrides {{{ "
+" only works before the colorscheme selection
+augroup ColourScheme
+    autocmd!
+    autocmd ColorScheme * highlight NeomakeErrorSign ctermfg=203 ctermbg=235
+                      \ | highlight NeomakeVirtualtextError ctermfg=203
+                      \ | highlight link ExtraWhitespace ErrorMsg
+    " Show leading white space that includes spaces, and trailing white space.
+    autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
+augroup END
 highlight ExtraWhitespace ctermbg=red guibg=red
-augroup ColorAuto
-  autocmd ColorScheme * highlight link ExtraWhitespace ErrorMsg
-  " Show leading white space that includes spaces, and trailing white space.
-  autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
-augroup end
+" }}} Colorscheme overrides "
+
+" visual appearance {{{ "
 set listchars=trail:·
 set list
 
