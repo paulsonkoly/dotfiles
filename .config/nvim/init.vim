@@ -34,9 +34,16 @@ call plug#end()
 
 " generic global vim options {{{ "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" the default C-s freezes the terminal. C-z in insert is close enough.
 set number
 set relativenumber
+
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set smartindent
+set colorcolumn=80
+
+" the default C-s freezes the terminal. C-z in insert is close enough.
 imap <C-z> <Plug>Isurround
 " }}} generic global vim options "
 
