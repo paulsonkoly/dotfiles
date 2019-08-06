@@ -108,6 +108,15 @@ augroup GinaStatus
 augroup end
 " }}} Git VCS "
 
+" Ultisnips {{{ "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" directory must be in the runtime path!
+let g:UltiSnipsSnippetsDir = '~/.local/share/nvim/site/UltiSnips'
+augroup SnippetAuto
+  autocmd FileType snippets setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
+augroup end
+" }}} Ultisnips "
+
 " FZF {{{ "
 map <leader>f :Buffers<CR>
 " }}} FZF"
