@@ -14,7 +14,7 @@ systems. The configuration files include setup for the following programs:
  * pywal
  * rubocop
  * termite
- * vim
+ * neovim
  * xinit
 
 There are custom scripts under bin/ which require a working ruby environment.
