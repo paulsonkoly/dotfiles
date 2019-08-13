@@ -7,10 +7,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'cocopon/iceberg.vim'
-Plug 'honza/vim-snippets'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'lambdalisue/gina.vim'
 Plug 'lambdalisue/vim-gista'
@@ -21,7 +19,7 @@ Plug 'neomake/neomake'
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
 Plug 'rickhowe/diffchar.vim'
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
