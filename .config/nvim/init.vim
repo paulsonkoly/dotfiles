@@ -1,7 +1,6 @@
 " vim:fdm=marker
 
-" vim-plug {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-plug {{{
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
@@ -29,10 +28,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
 
 call plug#end()
-" }}} vim-plug "
+" }}} vim-plug
 
-" generic global vim options {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" generic global vim options {{{
 set number
 set relativenumber
 
@@ -48,9 +46,9 @@ set hidden
 inoremap <C-z> <Plug>Isurround
 noremap ]g :cnext<CR>
 noremap [g :cprevious<CR>
-" }}} generic global vim options "
+" }}} generic global vim options
 
-" Colorcheme overrides {{{ "
+" Colorcheme overrides {{{
 " only works before the colorscheme selection
 augroup ColourScheme
     autocmd!
@@ -61,9 +59,9 @@ augroup ColourScheme
     autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 augroup END
 highlight ExtraWhitespace ctermbg=red guibg=red
-" }}} Colorscheme overrides "
+" }}} Colorscheme overrides
 
-" visual appearance {{{ "
+" visual appearance {{{
 set listchars=trail:·
 set list
 
@@ -73,9 +71,9 @@ set noshowmode
 colorscheme iceberg
 set cursorline
 
-" }}} visual appearance "
+" }}} visual appearance
 
-" airline {{{ "
+" airline {{{
 let g:airline_powerline_fonts = 1
 " disable orange - red syntastic bits when no warning/error
 let w:airline_skip_empty_sections = 1
@@ -83,19 +81,17 @@ call airline#parts#define_function('gina', 'gina#component#repo#branch')
 let g:airline_section_b = airline#section#create(['hunks', g:airline_symbols.branch,'gina'])
 let g:airline_right_sep=''
 let g:airline_left_sep=''
-" }}} airline "
+" }}} airline
 
-" easy align {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" easy align {{{
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-" }}} easy align "
+" }}} easy align
 
-" Git VCS {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Git VCS {{{
 map <leader>g :Gina status<CR>
 map <leader>c :Gina commit<CR>
 map <leader>l :Gina log --graph --all<CR>
@@ -109,28 +105,27 @@ let g:gitgutter_sign_modified='┃'
 augroup GinaStatus
   autocmd FileType gina-status setl number relativenumber
 augroup end
-" }}} Git VCS "
+" }}} Git VCS
 
-" Ultisnips {{{ "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ultisnips {{{
 " directory must be in the runtime path!
 let g:UltiSnipsSnippetsDir = '~/.local/share/nvim/site/UltiSnips'
 augroup SnippetAuto
   autocmd FileType snippets setlocal noexpandtab shiftwidth=2 tabstop=2 softtabstop=2
 augroup end
-" }}} Ultisnips "
+" }}} Ultisnips
 
-" FZF {{{ "
+" FZF {{{
 map <leader>b :Buffers<CR>
 map <leader>f :GFiles<CR>
 map <leader>t :Filetypes<CR>
 map <leader><leader> :BLines<CR>
-" }}} FZF"
+" }}} FZF
 
-" {{{ SplitJoin "
+" {{{ SplitJoin
 let g:no_splitjoin_ruby_curly_braces=0
-" }}} SplitJoin "
+" }}} SplitJoin
 
-" nnn {{{ "
+" nnn {{{
 let g:nnn#replace_netrw=1
-" }}} nnn "
+" }}} nnn
