@@ -43,7 +43,7 @@ set colorcolumn=80
 set hidden
 
 " the default C-s freezes the terminal. C-z in insert is close enough.
-inoremap <C-z> <Plug>Isurround
+imap <C-z> <Plug>Isurround
 noremap ]g :cnext<CR>
 noremap [g :cprevious<CR>
 " }}} generic global vim options
