@@ -15,6 +15,11 @@ SAVEHIST=1000
 setopt hist_ignore_all_dups
 bindkey -v
 # End of lines configured by zsh-newuser-install
+#
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^x' edit-command-line
 
 source $HOME/.profile
 source $HOME/.zsh/minimal/minimal.zsh
