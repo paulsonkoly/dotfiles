@@ -119,7 +119,10 @@ augroup end
 " }}} Ultisnips "
 
 " FZF {{{ "
-map <leader>f :Buffers<CR>
+map <leader>b :Buffers<CR>
+map <leader>f :GFiles<CR>
+map <leader>t :Filetypes<CR>
+map <leader><leader> :BLines<CR>
 " }}} FZF"
 
 " {{{ SplitJoin "
