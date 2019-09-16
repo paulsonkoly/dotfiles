@@ -86,6 +86,10 @@ let g:airline_right_sep=''
 let g:airline_left_sep=''
 " }}} airline
 
+" Neomake {{{ "
+call neomake#configure#automake('w')
+" }}} Neomake "
+
 " easy align {{{
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
