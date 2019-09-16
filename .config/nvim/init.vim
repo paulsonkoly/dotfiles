@@ -1,4 +1,5 @@
 " vim:fdm=marker
+scriptencoding utf-8
 
 " vim-plug {{{
 call plug#begin('~/.local/share/nvim/plugged')
