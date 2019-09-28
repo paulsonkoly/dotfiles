@@ -57,7 +57,7 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-  <keepBorder>yes</keepBorder>
+  <keepBorder>no</keepBorder>
   <animateIconify>yes</animateIconify>
   <font place="ActiveWindow">
     <name>sans</name>
@@ -641,11 +641,15 @@
 </menu>
 
 <applications>
-<!--
-  # this is an example with comments through out. use these to make your
-  # own rules, but without the comments of course.
-  # you may use one or more of the name/class/role/title/type rules to specify
-  # windows to match
+  <application class="*">
+    <decor>no</decor>
+  </application>
+
+  <!--
+    # this is an example with comments through out. use these to make your
+    # own rules, but without the comments of course.
+    # you may use one or more of the name/class/role/title/type rules to specify
+    # windows to match
 
   <application name="the window's _OB_APP_NAME property (see obxprop)"
               class="the window's _OB_APP_CLASS property (see obxprop)"
