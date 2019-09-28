@@ -12,4 +12,4 @@ xset b off
 
 wal -R
 
-exec i3
+exec openbox-session
