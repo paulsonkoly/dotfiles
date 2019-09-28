@@ -296,13 +296,13 @@
   </keybind>
 
   <!-- Keybindings for running applications -->
-  <keybind key="W-e">
+  <keybind key="W-p">
     <action name="Execute">
       <startupnotify>
         <enabled>true</enabled>
-        <name>Konqueror</name>
+        <name>dmenu</name>
       </startupnotify>
-      <command>kfmclient openProfile filemanagement</command>
+      <command>sh -c 'source ~/.cache/wal/colors.sh; exec dmenu_run -i -fn "Fantasque Sans Mono" -nb "$color0" -nf "$color8" -sf "$color0" -sb "$color1" -p "λ"'</command>
     </action>
   </keybind>
 </keyboard>
