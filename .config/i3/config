@@ -132,7 +132,7 @@ set $workspace9 "9: www"
 
 assign [class="Gvim"] $workspace5
 assign [class="Claws-mail"] $workspace2
-assign [class="Firefox"] $workspace9
+assign [class="firefox"] $workspace9
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
