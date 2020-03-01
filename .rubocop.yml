@@ -1,5 +1,5 @@
 # variable names like 'x', 'y' are perfectly valid for x, y coordinates
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Enabled: false
 
 # it's hardly readable otherwise
@@ -20,7 +20,7 @@ Style/CharacterLiteral:
   Enabled: false
 
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
 
 require:
   rubocop-rspec
