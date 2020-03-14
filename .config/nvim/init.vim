@@ -22,7 +22,6 @@ Plug 'lambdalisue/vim-gista'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/emmet-vim'
 Plug 'mcchrish/nnn.vim'
-Plug 'michaeljsmith/vim-indent-object'
 Plug 'neomake/neomake'
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
@@ -30,6 +29,7 @@ Plug 'rickhowe/diffchar.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 Plug 'vim-airline/vim-airline'
@@ -42,13 +42,11 @@ call plug#end()
 set number
 set relativenumber
 
-let mapleader = "#"
-
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set smartindent
-set colorcolumn=80
+set colorcolumn=120
 
 set hidden
 
@@ -89,8 +87,6 @@ let g:airline_powerline_fonts = 1
 let w:airline_skip_empty_sections = 1
 call airline#parts#define_function('gina', 'gina#component#repo#branch')
 let g:airline_section_b = airline#section#create(['hunks', g:airline_symbols.branch,'gina'])
-let g:airline_right_sep=''
-let g:airline_left_sep=''
 " }}} airline
 
 " Neomake {{{ "
@@ -115,6 +111,8 @@ map <leader>s :Gina stash<CR>
 " allow gina to discard directories with == on Gina status. It asks for
 " confirmation anyways
 let g:gina#action#index#discard_directories=1
+
+let g:gista#client#default_username='phaul'
 
 let g:gitgutter_sign_added='┃'
 let g:gitgutter_sign_modified='┃'
