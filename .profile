@@ -8,6 +8,7 @@ PATH=$HOME/bin:$HOME/.local/bin:$HOME/.npm-packages/bin:$PATH
 
 #ruby stuff
 PATH=`ruby -e 'puts File.join(Gem.user_dir, "bin")'`:$PATH
+RUBYOPT='-W:no-deprecated -W:no-experimental'
 
 # haskell stuff
 PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
