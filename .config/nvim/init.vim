@@ -104,6 +104,8 @@ nmap ga <Plug>(EasyAlign)
 map <leader>g :Gina status<CR>
 map <leader>c :Gina commit<CR>
 map <leader>l :Gina log --graph --all<CR>
+map <leader>h :Gina branch<CR>
+map <leader>s :Gina stash<CR>
 
 " allow gina to discard directories with == on Gina status. It asks for
 " confirmation anyways
