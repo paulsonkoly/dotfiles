@@ -37,6 +37,8 @@ call plug#end()
 set number
 set relativenumber
 
+let mapleader = "#"
+
 set expandtab
 set shiftwidth=2
 set softtabstop=2
