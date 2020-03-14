@@ -4,6 +4,11 @@ scriptencoding utf-8
 " vim-plug {{{
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'cocopon/iceberg.vim'
@@ -141,3 +146,9 @@ let g:no_splitjoin_ruby_curly_braces=0
 " nnn {{{
 let g:nnn#replace_netrw=1
 " }}} nnn
+
+" Language server {{{ "
+let g:LanguageClient_serverCommands = {
+    \ 'ruby': ['tcp://localhost:7658']
+    \ }
+" }}} Language server "
