@@ -129,6 +129,7 @@ augroup end
 " FZF {{{
 map <leader>b :Buffers<CR>
 map <leader>f :GFiles<CR>
+map <leader><S-f> :GFiles?<CR>
 map <leader>t :Filetypes<CR>
 map <leader><leader> :BLines<CR>
 " }}} FZF
