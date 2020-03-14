@@ -60,3 +60,15 @@ endsnippet
 snippet pry "require pry; binding.pry"
 require 'pry'; binding.pry
 endsnippet
+
+snippet ba "before_action (rails)" b
+before_action ${0::method}
+endsnippet
+
+snippet wpsa "when platform settings are" b
+include_context 'when platform setting are', ${1:unit}: { ${2:setting}: ${3:true} }
+endsnippet
+
+snippet atr "rails form attribute" b
+attribute ${1::name}, ${0:Decimal}
+endsnippet
