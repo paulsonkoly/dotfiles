@@ -4,15 +4,14 @@ scriptencoding utf-8
 " vim-plug {{{
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
-Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'cocopon/iceberg.vim'
 Plug 'ElmCast/elm-vim'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+Plug 'airblade/vim-gitgutter'
+Plug 'cocopon/iceberg.vim'
+Plug 'diepm/vim-rest-console'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
@@ -26,13 +25,10 @@ Plug 'neomake/neomake'
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
 Plug 'rickhowe/diffchar.vim'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
-Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
-Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
 
 call plug#end()
@@ -81,13 +77,18 @@ set cursorline
 
 " }}} visual appearance
 
-" airline {{{
-let g:airline_powerline_fonts = 1
-" disable orange - red syntastic bits when no warning/error
-let w:airline_skip_empty_sections = 1
-call airline#parts#define_function('gina', 'gina#component#repo#branch')
-let g:airline_section_b = airline#section#create(['hunks', g:airline_symbols.branch,'gina'])
-" }}} airline
+" lightline {{{
+let g:lightline = {
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+  \   'right': [ [ 'lineinfo' ],
+  \              [ 'percent' ],
+  \              [ 'fileformat', 'fileencoding', 'filetype' ] ] },
+  \ 'component_function': { 'gitbranch': 'gina#component#repo#branch' },
+  \ 'colorscheme': 'wombat'
+  \ }
+" }}} lightline
 
 " Neomake {{{ "
 call neomake#configure#automake('w')
@@ -106,7 +107,7 @@ map <leader>g :Gina status<CR>
 map <leader>c :Gina commit<CR>
 map <leader>l :Gina log --graph --all<CR>
 map <leader>h :Gina branch<CR>
-map <leader>s :Gina stash<CR>
+map <leader>s :Gina stash list<CR>
 
 " allow gina to discard directories with == on Gina status. It asks for
 " confirmation anyways
@@ -135,6 +136,7 @@ map <leader>f :GFiles<CR>
 map <leader><S-f> :GFiles?<CR>
 map <leader>t :Filetypes<CR>
 map <leader><leader> :BLines<CR>
+map <leader>; :History:<CR>
 " }}} FZF
 
 " {{{ SplitJoin
@@ -145,8 +147,7 @@ let g:no_splitjoin_ruby_curly_braces=0
 let g:nnn#replace_netrw=1
 " }}} nnn
 
-" Language server {{{ "
-let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['tcp://localhost:7658']
-    \ }
-" }}} Language server "
+" VRC {{{ "
+let g:vrc_set_default_mapping = 0
+map <Leader>r :call VrcQuery()<CR>
+" }}} VRC "
