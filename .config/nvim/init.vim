@@ -81,11 +81,12 @@ set cursorline
 let g:lightline = {
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+  \             [ 'gitbranch', 'platform', 'readonly', 'filename', 'modified' ] ],
   \   'right': [ [ 'lineinfo' ],
   \              [ 'percent' ],
   \              [ 'fileformat', 'fileencoding', 'filetype' ] ] },
   \ 'component_function': { 'gitbranch': 'gina#component#repo#branch' },
+  \ 'component': { 'platform': $CURRENT_PLATFORM },
   \ 'colorscheme': 'wombat'
   \ }
 " }}} lightline
