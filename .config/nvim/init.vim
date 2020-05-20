@@ -46,6 +46,8 @@ set colorcolumn=120
 
 set hidden
 
+let mapleader = '#'
+
 " the default C-s freezes the terminal. C-z in insert is close enough.
 imap <C-z> <Plug>Isurround
 noremap ]g :cnext<CR>
