@@ -1,0 +1,295 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+foreground = ${xrdb:color8:#222}
+background = ${xrdb:color0:#222}
+
+foreground-inverse = ${xrdb:color0:#222}
+background-inverse = ${xrdb:color1:#222}
+
+foreground-faded = ${xrdb:color2:#222}
+background-raised = ${xrdb:color0:#222}
+
+foreground-prefix = ${xrdb:color2:#222}
+
+warning = ${xrdb:color3:#222}
+active-led = ${xrdb:color1:#222}
+
+[bar/bar0]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 24
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+underline-size = 0
+
+border-bottom-size = 1
+border-bottom-color = ${xrdb:color1:#222}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 3
+module-margin-right = 0
+
+font-0 = Fantasque Sans Mono 10:pixelsize=12; 2
+font-1 = Font Awesome 5 Free:style=Solid:pixelsize=13; 2
+font-2 = Font Awesome 5 Free:style=Regular:pixelsize=13; 2
+font-3 = Font Awesome 5 Brands:pixelsize=13; 2
+font-4 = Font Awesome 5 Free:style=Solid:pixelsize=11; 2
+
+modules-left = i3
+modules-center = xwindow
+modules-right = volume gap shipping_forecast gmail filesystem cpu memory temperature wlan eth battery date xkeyboard gap
+
+tray-position = right
+tray-padding = 2
+
+wm-restack = i3
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-prefix}
+
+label-layout = %layout%
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.warning}
+label-indicator-underline = ${colors.warning}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+format-mounted-prefix=" "
+format-unmounted-prefix=" "
+format-mounted-prefix-foreground = ${colors.foreground-prefix}
+format-unmounted-prefix-foreground = ${colors.foreground-prefix}
+format-mounted = <label-mounted>
+format-unmounted = <label-unmounted>
+
+label-mounted = %free%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-inverse}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+ws-icon-0 = "1: shell; %{T5}%{T-} "
+ws-icon-1 = "2: email;  "
+ws-icon-2 = "3: chat;  "
+ws-icon-3 = "4: music; %{T2}%{T-} "
+ws-icon-4 = "5: ruby; %{T3}%{T-} "
+ws-icon-5 = "9: www;  "
+
+; Only show workspaces on the same output as the bar
+;pin-workspaces = true
+
+; focused = Active workspace on focused monitor
+label-focused = %index%: %icon%
+label-focused-foreground = ${colors.foreground-inverse}
+label-focused-background = ${colors.background-inverse}
+label-focused-padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%: %icon%
+label-unfocused-foreground = ${colors.foreground-faded}
+label-unfocused-background = ${colors.background-raised}
+label-unfocused-padding = ${self.label-focused-padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%: %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%: %icon%
+label-urgent-background = ${colors.warning}
+label-urgent-padding = ${self.label-focused-padding}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = 
+format-prefix-foreground=${colors.foreground-prefix}
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground=${colors.foreground-prefix}
+label = %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected-prefix=" "
+format-disconnected-prefix=" "
+format-connected-prefix-foreground=${colors.foreground-prefix}
+format-disconnected-prefix-foreground=${colors.foreground-prefix}
+
+format-connected = <label-connected> <ramp-signal>
+label-connected = %essid::10:..%
+
+format-disconnected = down
+
+ramp-signal-foreground = ${colors.foreground-prefix}
+ramp-signal-0 = ${env:POLYBAR_RAMP_0}
+ramp-signal-1 = ${env:POLYBAR_RAMP_1}
+ramp-signal-2 = ${env:POLYBAR_RAMP_2}
+ramp-signal-3 = ${env:POLYBAR_RAMP_3}
+ramp-signal-4 = ${env:POLYBAR_RAMP_4}
+ramp-signal-5 = ${env:POLYBAR_RAMP_5}
+ramp-signal-6 = ${env:POLYBAR_RAMP_6}
+ramp-signal-7 = ${env:POLYBAR_RAMP_7}
+
+[module/eth]
+type = internal/network
+interface = enp9s0
+interval = 3.0
+
+; format-connected-underline = #55aa55
+; format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-inverse}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-inverse}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+label = %date% %time%
+
+[module/volume]
+type = internal/alsa
+
+format-volume = <bar-volume>
+format-volume-prefix = " "
+format-volume-prefix-foreground=${colors.foreground-prefix}
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-prefix-foreground=${colors.foreground-prefix}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-gradient = false
+bar-volume-indicator = ━
+bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = ${colors.active-led}
+bar-volume-fill = ━
+bar-volume-fill-font = 2
+bar-volume-fill-foreground = ${colors.foreground-prefix}
+bar-volume-empty = ━
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+
+format-discharging = <ramp-capacity> <label-discharging>
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-prefix}
+
+ramp-capacity-foreground = ${colors.foreground-prefix}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+
+animation-charging-foreground = ${colors.foreground-prefix}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format-prefix = " "
+format-warn-prefix = " "
+format-prefix-foreground = ${colors.foreground-prefix}
+format-warn-prefix-foreground = ${colors.foreground-prefix}
+
+format = <label>
+format-warn = <label-warn>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.warning}
+
+[module/gmail]
+type = custom/script
+exec = gmail.rb
+tail = true
+format-prefix=" "
+format-prefix-foreground=${colors.foreground-prefix}
+click-left="firefox gmail.com"
+
+[module/shipping_forecast]
+# this is a hacky trick to use format prefixes nothing appears if content is empty
+type = custom/script
+exec = echo 'Wight'
+tail = false
+format-prefix=" "
+format-prefix-foreground=${colors.foreground-prefix}
+click-left="marine.rb"
+
+[module/gap]
+type = custom/text
+content = "   "
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
