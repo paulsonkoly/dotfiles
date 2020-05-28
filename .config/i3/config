@@ -44,9 +44,9 @@ bindsym $mod+Shift+c kill
 bindsym $mod+p exec rofi -show run
 bindsym $mod+o exec rofi -show window
 
-bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioRaiseVolume exec amixer sset Master 10%+
-bindsym XF86AudioLowerVolume exec amixer sset Master 10%-
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
