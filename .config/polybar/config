@@ -42,11 +42,11 @@ padding-right = 0
 module-margin-left = 3
 module-margin-right = 0
 
-font-0 = Fantasque Sans Mono 10:pixelsize=12; 2
+font-0 = Fantasque Sans Mono:style=Regular:pixelsize=12; 2
 font-1 = Font Awesome 5 Free:style=Solid:pixelsize=13; 2
 font-2 = Font Awesome 5 Free:style=Regular:pixelsize=13; 2
 font-3 = Font Awesome 5 Brands:pixelsize=13; 2
-font-4 = Font Awesome 5 Free:style=Solid:pixelsize=11; 2
+font-4 = Font Awesome 5 Free:style=Solid:pixelsize=10; 2
 
 modules-left = i3
 modules-center = xwindow
