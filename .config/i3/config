@@ -180,6 +180,7 @@ client.unfocused        $normal_bg $normal_bg $normal_fg $normal_bg $normal_bg
 client.background       #ffffff
 
 for_window [class="^.*"] border pixel 0
+for_window [class="[bB]lueberry.*"] floating enable
 
 exec --no-startup-id polybar bar0
 exec --no-startup-id dunst.sh
