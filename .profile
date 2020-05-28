@@ -9,14 +9,16 @@ export PATH
 export TERMINAL=termite
 export EDITOR=nvim
 
-export POLYBAR_RAMP_0="%{F${color8}}━━━━━━━%{F-}"
-export POLYBAR_RAMP_1="━%{F${color8}}━━━━━━%{F-}"
-export POLYBAR_RAMP_2="━━%{F${color8}}━━━━━%{F-}"
-export POLYBAR_RAMP_3="━━━%{F${color8}}━━━━%{F-}"
-export POLYBAR_RAMP_4="━━━━%{F${color8}}━━━%{F-}"
-export POLYBAR_RAMP_5="━━━━━%{F${color8}}━━%{F-}"
-export POLYBAR_RAMP_6="━━━━━━%{F${color8}}━%{F-}"
-export POLYBAR_RAMP_7="━━━━━━━"
+export POLYBAR_RAMP_0="%{F${color8}}━━━━━━━━━%{F-}"
+export POLYBAR_RAMP_1="━%{F${color8}}━━━━━━━━%{F-}"
+export POLYBAR_RAMP_2="━━%{F${color8}}━━━━━━━%{F-}"
+export POLYBAR_RAMP_3="━━━%{F${color8}}━━━━━━%{F-}"
+export POLYBAR_RAMP_4="━━━━%{F${color8}}━━━━━%{F-}"
+export POLYBAR_RAMP_5="━━━━━%{F${color8}}━━━━%{F-}"
+export POLYBAR_RAMP_6="━━━━━━%{F${color8}}━━━%{F-}"
+export POLYBAR_RAMP_7="━━━━━━━%{F${color8}}━━%{F-}"
+export POLYBAR_RAMP_8="━━━━━━━━%{F${color8}}━%{F-}"
+export POLYBAR_RAMP_9="━━━━━━━━━"
 
 export NNN_COPIER=$HOME/bin/nnn_copier.sh
 

@@ -47,6 +47,7 @@ font-1 = Font Awesome 5 Free:style=Solid:pixelsize=13; 2
 font-2 = Font Awesome 5 Free:style=Regular:pixelsize=13; 2
 font-3 = Font Awesome 5 Brands:pixelsize=13; 2
 font-4 = Font Awesome 5 Free:style=Solid:pixelsize=10; 2
+font-5 = Fantasque Sans Mono:style=Regular:pixelsize=12; 1
 
 modules-left = i3
 modules-center = xwindow
@@ -159,6 +160,7 @@ label-connected = %essid::10:..%
 
 format-disconnected = down
 
+ramp-signal-font = 6
 ramp-signal-foreground = ${colors.foreground-prefix}
 ramp-signal-0 = ${env:POLYBAR_RAMP_0}
 ramp-signal-1 = ${env:POLYBAR_RAMP_1}
@@ -168,6 +170,8 @@ ramp-signal-4 = ${env:POLYBAR_RAMP_4}
 ramp-signal-5 = ${env:POLYBAR_RAMP_5}
 ramp-signal-6 = ${env:POLYBAR_RAMP_6}
 ramp-signal-7 = ${env:POLYBAR_RAMP_7}
+ramp-signal-8 = ${env:POLYBAR_RAMP_8}
+ramp-signal-9 = ${env:POLYBAR_RAMP_9}
 
 [module/eth]
 type = internal/network
@@ -212,10 +216,13 @@ label-muted = sound muted
 bar-volume-width = 10
 bar-volume-gradient = false
 bar-volume-indicator = ━
+bar-volume-indicator-font = 6
 bar-volume-indicator-foreground = ${colors.active-led}
 bar-volume-fill = ━
+bar-volume-fill-font = 6
 bar-volume-fill-foreground = ${colors.foreground-prefix}
 bar-volume-empty = ━
+bar-volume-empty-font = 6
 bar-volume-empty-foreground = ${colors.foreground}
 
 [module/battery]
