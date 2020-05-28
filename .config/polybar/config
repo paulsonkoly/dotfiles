@@ -198,7 +198,7 @@ time-alt = %H:%M:%S
 label = %date% %time%
 
 [module/volume]
-type = internal/alsa
+type = internal/pulseaudio
 
 format-volume = <bar-volume>
 format-volume-prefix = " "
@@ -212,13 +212,10 @@ label-muted = sound muted
 bar-volume-width = 10
 bar-volume-gradient = false
 bar-volume-indicator = ━
-bar-volume-indicator-font = 2
 bar-volume-indicator-foreground = ${colors.active-led}
 bar-volume-fill = ━
-bar-volume-fill-font = 2
 bar-volume-fill-foreground = ${colors.foreground-prefix}
 bar-volume-empty = ━
-bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground}
 
 [module/battery]
