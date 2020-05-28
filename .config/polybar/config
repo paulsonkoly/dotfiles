@@ -98,12 +98,12 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-ws-icon-0 = "1: shell; %{T5}%{T-} "
-ws-icon-1 = "2: email;  "
-ws-icon-2 = "3: chat;  "
-ws-icon-3 = "4: music; %{T2}%{T-} "
-ws-icon-4 = "5: ruby; %{T3}%{T-} "
-ws-icon-5 = "9: www;  "
+ws-icon-0 = "1: shell;%{T5}%{T-}"
+ws-icon-1 = "2: email; "
+ws-icon-2 = "3: chat; "
+ws-icon-3 = "4: music;%{T2}%{T-}"
+ws-icon-4 = "5: ruby;%{T3}%{T-}"
+ws-icon-5 = "9: www; "
 
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
