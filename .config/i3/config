@@ -47,6 +47,8 @@ bindsym $mod+o exec rofi -show window
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
+bindsym XF86KbdBrightnessUp exec asus-kbd-backlight up
+bindsym XF86KbdBrightnessDown exec asus-kbd-backlight down
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
