@@ -5,9 +5,7 @@ scriptencoding utf-8
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'ElmCast/elm-vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
 Plug 'airblade/vim-gitgutter'
 Plug 'cocopon/iceberg.vim'
 Plug 'diepm/vim-rest-console'
@@ -23,7 +21,6 @@ Plug 'mattn/emmet-vim'
 Plug 'mcchrish/nnn.vim'
 Plug 'neomake/neomake'
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
-Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell'}
 Plug 'rickhowe/diffchar.vim'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'tpope/vim-commentary'
