@@ -51,7 +51,8 @@ font-5 = Fantasque Sans Mono:style=Regular:pixelsize=12; 1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = volume gap shipping_forecast gmail filesystem cpu memory temperature wlan eth battery date xkeyboard gap
+; modules-right = volume shipping_forecast gmail filesystem cpu memory temperature wlan eth battery date xkeyboard
+modules-right = volume gmail filesystem cpu cpu_freq cpu_fan memory temperature wlan eth battery date xkeyboard
 
 tray-position = right
 tray-padding = 2
@@ -134,7 +135,7 @@ label-urgent-padding = ${self.label-focused-padding}
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground=${colors.foreground-prefix}
 label = %percentage:2%%
 
@@ -284,6 +285,23 @@ tail = false
 format-prefix=" "
 format-prefix-foreground=${colors.foreground-prefix}
 click-left="marine.rb"
+
+[module/cpu_freq]
+# this is a hacky trick to use format prefixes nothing appears if content is empty
+type = custom/script
+exec = "cpu_freq.rb"
+tail = true
+format-prefix=" "
+format-prefix-foreground=${colors.foreground-prefix}
+
+[module/cpu_fan]
+# this is a hacky trick to use format prefixes nothing appears if content is empty
+type = custom/script
+exec = "cpu_fan.rb"
+tail = false
+internal = 13
+format-prefix=" "
+format-prefix-foreground=${colors.foreground-prefix}
 
 [module/gap]
 type = custom/text

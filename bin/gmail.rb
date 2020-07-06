@@ -52,5 +52,5 @@ end
 
 with_connection do |gmail|
   puts gmail.inbox.unseen.count
-  $stdout.flush
+  STDOUT.flush
 end
