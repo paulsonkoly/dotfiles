@@ -80,7 +80,7 @@
     idle_threshold = 120
 
     ### Text ###
-    font = Fira Mono Medium 8
+    font = Fantasque Sans Mono 13
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -233,7 +233,6 @@
 
     # Context menu.
     context = ctrl+shift+period
-
 
 
 # Every section that isn't one of the above is interpreted as a rules to
