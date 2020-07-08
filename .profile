@@ -1,8 +1,10 @@
 # Non shell specific setup
 # vim:set ft=zsh:
 
-# haskell stuff
-PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+source "$HOME/.cache/wal/colors.sh"
+unset FZF_DEFAULT_OPTS # I like original don't need to alter fzf colours
+
+PATH="$PATH:$HOME/bin"
 
 export PATH
 
@@ -52,6 +54,6 @@ _fzf_complete_yay_post() {
 }
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
