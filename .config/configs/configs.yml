@@ -22,11 +22,16 @@ aliases:
     color14: &color14 "#95c4ce"
     color15: &color15 "#d2d4de"
 
+  font: &font Fantasque Sans Mono
+  fontsize: &fontsize 13
+
 termite:
   template: /home/phaul/.config/configs/templates/termite.ini.erb
   output: /home/phaul/.config/termite/config
   binding:
     colors: *color_bindings
+    font: *font
+    fontsize: *fontsize
 
 polybar:
   template: /home/phaul/.config/configs/templates/polybar.ini.erb
@@ -43,6 +48,7 @@ polybar:
     misc_color: *color4
     net_color: *color3
     sound_color: *color10
+    font: *font
 
 i3:
   template: /home/phaul/.config/configs/templates/i3.ini.erb
@@ -51,11 +57,17 @@ i3:
     border_color: "#b3c262"
     text_color: *background
 
-rofi:
+rofi_top:
    template: /home/phaul/.config/configs/templates/rofi.rasi.erb
+   output: /home/phaul/.config/rofi/config.rasi
+   binding:
+     font: *font
+     fontsize: *fontsize
+
+rofi:
+   template: /home/phaul/.config/configs/templates/rofi-colors.rasi.erb
    output: /home/phaul/.config/rofi/colors-rofi-dark.rasi
    binding:
      <<: *color_bindings
      background: "#101010"
      active: *color6
-
