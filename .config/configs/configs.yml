@@ -25,7 +25,8 @@ aliases:
 termite:
   template: /home/phaul/.config/configs/templates/termite.ini.erb
   output: /home/phaul/.config/termite/config
-  binding: *colour_bindings
+  binding:
+    colors: *colour_bindings
 
 polybar:
   template: /home/phaul/.config/configs/templates/polybar.ini.erb
