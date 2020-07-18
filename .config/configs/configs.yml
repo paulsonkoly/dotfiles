@@ -43,3 +43,10 @@ polybar:
     misc_color: *color4
     net_color: *color3
     sound_color: *color10
+
+i3:
+  template: /home/phaul/.config/configs/templates/i3.ini.erb
+  output: /home/phaul/.config/i3/config
+  binding:
+    border_color: "#b3c262"
+    text_color: *background
