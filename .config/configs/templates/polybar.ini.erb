@@ -7,34 +7,19 @@
 ;
 ;=====================================================
 
-[colors]
-foreground = ${xrdb:color8:#222}
-background = ${xrdb:color0:#222}
-
-foreground-inverse = ${xrdb:color0:#222}
-background-inverse = ${xrdb:color1:#222}
-
-foreground-faded = ${xrdb:color2:#222}
-background-raised = ${xrdb:color0:#222}
-
-foreground-prefix = ${xrdb:color2:#222}
-
-warning = ${xrdb:color3:#222}
-active-led = ${xrdb:color1:#222}
-
 [bar/bar0]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 24
 fixed-center = false
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = <%= @background %>
+foreground = <%= @text_color %>
 
 underline-size = 0
 
 border-bottom-size = 1
-border-bottom-color = ${xrdb:color1:#222}
+border-bottom-color = <%= @icon_color %>
 
 padding-left = 0
 padding-right = 0
@@ -68,14 +53,14 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-prefix}
+format-prefix-foreground = <%= @icon_color %>
 
 label-layout = %layout%
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.warning}
-label-indicator-underline = ${colors.warning}
+label-indicator-background = <%= @warning_color %>
+label-indicator-underline = <%= @warning_color %>
 
 [module/filesystem]
 type = internal/fs
@@ -85,14 +70,14 @@ mount-0 = /
 
 format-mounted-prefix=" "
 format-unmounted-prefix=" "
-format-mounted-prefix-foreground = ${colors.foreground-prefix}
-format-unmounted-prefix-foreground = ${colors.foreground-prefix}
+format-mounted-prefix-foreground = <%= @icon_color %>
+format-unmounted-prefix-foreground = <%= @icon_color %>
 format-mounted = <label-mounted>
 format-unmounted = <label-unmounted>
 
 label-mounted = %free%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-inverse}
+label-unmounted-foreground = <%= @icon_color %>
 
 [module/i3]
 type = internal/i3
@@ -112,14 +97,14 @@ ws-icon-5 = "9: www; "
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%: %icon%
-label-focused-foreground = ${colors.foreground-inverse}
-label-focused-background = ${colors.background-inverse}
+label-focused-foreground = <%= @background %>
+label-focused-background = <%= @icon_color %>
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%: %icon%
-label-unfocused-foreground = ${colors.foreground-faded}
-label-unfocused-background = ${colors.background-raised}
+label-unfocused-foreground = <%= @icon_color %>
+label-unfocused-background = <%= @background %>
 label-unfocused-padding = ${self.label-focused-padding}
 
 ; visible = Active workspace on unfocused monitor
@@ -129,21 +114,21 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%: %icon%
-label-urgent-background = ${colors.warning}
+label-urgent-background = <%= @warning_color %>
 label-urgent-padding = ${self.label-focused-padding}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground=${colors.foreground-prefix}
+format-prefix-foreground=<%= @icon_color %>
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground=${colors.foreground-prefix}
+format-prefix-foreground=<%= @icon_color %>
 label = %percentage_used%%
 
 [module/wlan]
@@ -153,26 +138,19 @@ interval = 3.0
 
 format-connected-prefix=" "
 format-disconnected-prefix=" "
-format-connected-prefix-foreground=${colors.foreground-prefix}
-format-disconnected-prefix-foreground=${colors.foreground-prefix}
+format-connected-prefix-foreground=<%= @icon_color %>
+format-disconnected-prefix-foreground=<%= @icon_color %>
 
 format-connected = <label-connected> <ramp-signal>
-label-connected = %essid::10:..%
+label-connected = %essid:0:10:..%
 
 format-disconnected = down
 
 ramp-signal-font = 6
-ramp-signal-foreground = ${colors.foreground-prefix}
-ramp-signal-0 = ${env:POLYBAR_RAMP_0}
-ramp-signal-1 = ${env:POLYBAR_RAMP_1}
-ramp-signal-2 = ${env:POLYBAR_RAMP_2}
-ramp-signal-3 = ${env:POLYBAR_RAMP_3}
-ramp-signal-4 = ${env:POLYBAR_RAMP_4}
-ramp-signal-5 = ${env:POLYBAR_RAMP_5}
-ramp-signal-6 = ${env:POLYBAR_RAMP_6}
-ramp-signal-7 = ${env:POLYBAR_RAMP_7}
-ramp-signal-8 = ${env:POLYBAR_RAMP_8}
-ramp-signal-9 = ${env:POLYBAR_RAMP_9}
+ramp-signal-foreground = <%= @icon_color %>
+<% 10.times do |ix| %>
+  ramp-signal-<%= ix %> = ${env:POLYBAR_RAMP_<%= ix %>}
+<% end %>
 
 [module/eth]
 type = internal/network
@@ -181,14 +159,14 @@ interval = 3.0
 
 ; format-connected-underline = #55aa55
 ; format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-inverse}
+format-connected-prefix-foreground = <%= @icon_color %>
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-inverse}
+;label-disconnected-foreground = <%= @icon_color %>
 
 [module/date]
 type = internal/date
@@ -207,24 +185,24 @@ type = internal/pulseaudio
 
 format-volume = <bar-volume>
 format-volume-prefix = " "
-format-volume-prefix-foreground=${colors.foreground-prefix}
+format-volume-prefix-foreground=<%= @icon_color %>
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
-format-muted-prefix-foreground=${colors.foreground-prefix}
+format-muted-prefix-foreground=<%= @icon_color %>
 label-muted = sound muted
 
 bar-volume-width = 10
 bar-volume-gradient = false
 bar-volume-indicator = ━
 bar-volume-indicator-font = 6
-bar-volume-indicator-foreground = ${colors.active-led}
+bar-volume-indicator-foreground = <%= @icon_color %>
 bar-volume-fill = ━
 bar-volume-fill-font = 6
-bar-volume-fill-foreground = ${colors.foreground-prefix}
+bar-volume-fill-foreground = <%= @icon_color %>
 bar-volume-empty = ━
 bar-volume-empty-font = 6
-bar-volume-empty-foreground = ${colors.foreground}
+bar-volume-empty-foreground = <% @text_color %>
 
 [module/battery]
 type = internal/battery
@@ -237,14 +215,14 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-prefix}
+format-full-prefix-foreground = <%= @icon_color %>
 
-ramp-capacity-foreground = ${colors.foreground-prefix}
+ramp-capacity-foreground = <%= @icon_color %>
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 
-animation-charging-foreground = ${colors.foreground-prefix}
+animation-charging-foreground = <%= @icon_color %>
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -259,22 +237,22 @@ warn-temperature = 60
 
 format-prefix = " "
 format-warn-prefix = " "
-format-prefix-foreground = ${colors.foreground-prefix}
-format-warn-prefix-foreground = ${colors.foreground-prefix}
+format-prefix-foreground = <%= @icon_color %>
+format-warn-prefix-foreground = <%= @icon_color %>
 
 format = <label>
 format-warn = <label-warn>
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.warning}
+label-warn-foreground = <%= @warning_color %>
 
 [module/gmail]
 type = custom/script
 exec = gmail.rb
 tail = true
 format-prefix=" "
-format-prefix-foreground=${colors.foreground-prefix}
+format-prefix-foreground=<%= @icon_color %>
 click-left="firefox gmail.com"
 
 [module/shipping_forecast]
@@ -283,7 +261,7 @@ type = custom/script
 exec = echo 'Wight'
 tail = false
 format-prefix=" "
-format-prefix-foreground=${colors.foreground-prefix}
+format-prefix-foreground=<%= @icon_color %>
 click-left="marine.rb"
 
 [module/cpu_freq]
@@ -292,7 +270,7 @@ type = custom/script
 exec = "cpu_freq.rb"
 tail = true
 format-prefix=" "
-format-prefix-foreground=${colors.foreground-prefix}
+format-prefix-foreground=<%= @icon_color %>
 
 [module/cpu_fan]
 # this is a hacky trick to use format prefixes nothing appears if content is empty
@@ -301,7 +279,7 @@ exec = "cpu_fan.rb"
 tail = false
 internal = 13
 format-prefix=" "
-format-prefix-foreground=${colors.foreground-prefix}
+format-prefix-foreground=<%= @icon_color %>
 
 [module/gap]
 type = custom/text

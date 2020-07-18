@@ -1,0 +1,38 @@
+---
+# inspired by colours found in https://cocopon.github.io/iceberg.vim/
+aliases:
+  colour_bindings: &colour_bindings
+    background: &background "#1c1c1c"
+    foreground: &foreground "#e3ecdc"
+    cursor: &cursor "#505050"
+    color0: &color0 "#1e2132"
+    color1: &color1 "#e27878"
+    color2: &color2 "#b4be82"
+    color3: &color3 "#e2a478"
+    color4: &color4 "#84a0c6"
+    color5: &color5 "#a093c7"
+    color6: &color6 "#89b8c2"
+    color7: &color7 "#c6c8d1"
+    color8: &color8 "#6b7089"
+    color9: &color9 "#e98989"
+    color10: &color10 "#c0ca8e"
+    color11: &color11 "#e9b189"
+    color12: &color12 "#91acd1"
+    color13: &color13 "#ada0d3"
+    color14: &color14 "#95c4ce"
+    color15: &color15 "#d2d4de"
+
+termite:
+  template: /home/phaul/.config/configs/templates/termite.ini.erb
+  output: /home/phaul/.config/termite/config
+  binding: *colour_bindings
+
+polybar:
+  template: /home/phaul/.config/configs/templates/polybar.ini.erb
+  output: /home/phaul/.config/polybar/config
+  binding:
+    <<: *colour_bindings
+    background: "#101010"
+    icon_color: "#c7d86b"
+    text_color: "#9ea59a"
+    warning_color: *color1
