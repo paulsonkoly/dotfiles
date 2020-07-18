@@ -1,4 +1,4 @@
 configuration {
-  theme: "~/.cache/wal/colors-rofi-dark";
+  theme: "~/.config/rofi/colors-rofi-dark";
   font: "Fantasque Sans Mono 10";
 }

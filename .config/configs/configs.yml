@@ -1,7 +1,7 @@
 ---
 # inspired by colours found in https://cocopon.github.io/iceberg.vim/
 aliases:
-  colour_bindings: &colour_bindings
+  color_bindings: &color_bindings
     background: &background "#1c1c1c"
     foreground: &foreground "#e3ecdc"
     cursor: &cursor "#505050"
@@ -26,13 +26,13 @@ termite:
   template: /home/phaul/.config/configs/templates/termite.ini.erb
   output: /home/phaul/.config/termite/config
   binding:
-    colors: *colour_bindings
+    colors: *color_bindings
 
 polybar:
   template: /home/phaul/.config/configs/templates/polybar.ini.erb
   output: /home/phaul/.config/polybar/config
   binding:
-    <<: *colour_bindings
+    <<: *color_bindings
     background: "#101010"
     focused_ws: *color6
     underline_color: *color6
@@ -50,3 +50,12 @@ i3:
   binding:
     border_color: "#b3c262"
     text_color: *background
+
+rofi:
+   template: /home/phaul/.config/configs/templates/rofi.rasi.erb
+   output: /home/phaul/.config/rofi/colors-rofi-dark.rasi
+   binding:
+     <<: *color_bindings
+     background: "#101010"
+     active: *color6
+
