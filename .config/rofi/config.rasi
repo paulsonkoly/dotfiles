@@ -1,4 +1,0 @@
-configuration {
-  theme: "~/.config/rofi/colors-rofi-dark";
-  font: "Fantasque Sans Mono 13";
-}
