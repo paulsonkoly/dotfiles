@@ -34,6 +34,12 @@ polybar:
   binding:
     <<: *colour_bindings
     background: "#101010"
-    icon_color: "#c7d86b"
-    text_color: "#9ea59a"
+    focused_ws: *color6
+    underline_color: *color6
+    unfocused_ws: *color6
     warning_color: *color1
+    cpu_color: "#7759b4"
+    mem_color: *color14
+    misc_color: *color4
+    net_color: *color3
+    sound_color: *color10

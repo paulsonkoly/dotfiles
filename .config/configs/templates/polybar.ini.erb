@@ -14,12 +14,12 @@ height = 24
 fixed-center = false
 
 background = <%= @background %>
-foreground = <%= @text_color %>
+foreground = <%= @foreground %>
 
 underline-size = 0
 
 border-bottom-size = 1
-border-bottom-color = <%= @icon_color %>
+border-bottom-color = <%= @underline_color %>
 
 padding-left = 0
 padding-right = 0
@@ -37,7 +37,7 @@ font-5 = Fantasque Sans Mono:style=Regular:pixelsize=12; 1
 modules-left = i3
 modules-center = xwindow
 ; modules-right = volume shipping_forecast gmail filesystem cpu memory temperature wlan eth battery date xkeyboard
-modules-right = volume gmail filesystem cpu cpu_freq cpu_fan memory temperature wlan eth battery date xkeyboard
+modules-right = gmail filesystem cpu cpu_freq cpu_fan memory temperature volume wlan eth battery date xkeyboard
 
 tray-position = right
 tray-padding = 2
@@ -53,7 +53,7 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = <%= @icon_color %>
+format-prefix-foreground = <%= @misc_color %>
 
 label-layout = %layout%
 
@@ -70,14 +70,14 @@ mount-0 = /
 
 format-mounted-prefix=" "
 format-unmounted-prefix=" "
-format-mounted-prefix-foreground = <%= @icon_color %>
-format-unmounted-prefix-foreground = <%= @icon_color %>
+format-mounted-prefix-foreground = <%= @misc_color %>
+format-unmounted-prefix-foreground = <%= @misc_color %>
 format-mounted = <label-mounted>
 format-unmounted = <label-unmounted>
 
 label-mounted = %free%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = <%= @icon_color %>
+label-unmounted-foreground = <%= @misc_color %>
 
 [module/i3]
 type = internal/i3
@@ -98,12 +98,12 @@ ws-icon-5 = "9: www; "
 ; focused = Active workspace on focused monitor
 label-focused = %index%: %icon%
 label-focused-foreground = <%= @background %>
-label-focused-background = <%= @icon_color %>
+label-focused-background = <%= @focused_ws %>
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%: %icon%
-label-unfocused-foreground = <%= @icon_color %>
+label-unfocused-foreground = <%= @misc_color %>
 label-unfocused-background = <%= @background %>
 label-unfocused-padding = ${self.label-focused-padding}
 
@@ -121,14 +121,14 @@ label-urgent-padding = ${self.label-focused-padding}
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground=<%= @icon_color %>
+format-prefix-foreground=<%= @cpu_color %>
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground=<%= @icon_color %>
+format-prefix-foreground=<%= @mem_color %>
 label = %percentage_used%%
 
 [module/wlan]
@@ -138,8 +138,8 @@ interval = 3.0
 
 format-connected-prefix=" "
 format-disconnected-prefix=" "
-format-connected-prefix-foreground=<%= @icon_color %>
-format-disconnected-prefix-foreground=<%= @icon_color %>
+format-connected-prefix-foreground=<%= @net_color %>
+format-disconnected-prefix-foreground=<%= @net_color %>
 
 format-connected = <label-connected> <ramp-signal>
 label-connected = %essid:0:10:..%
@@ -147,7 +147,7 @@ label-connected = %essid:0:10:..%
 format-disconnected = down
 
 ramp-signal-font = 6
-ramp-signal-foreground = <%= @icon_color %>
+ramp-signal-foreground = <%= @net_color %>
 <% 10.times do |ix| %>
   ramp-signal-<%= ix %> = ${env:POLYBAR_RAMP_<%= ix %>}
 <% end %>
@@ -159,14 +159,14 @@ interval = 3.0
 
 ; format-connected-underline = #55aa55
 ; format-connected-prefix = " "
-format-connected-prefix-foreground = <%= @icon_color %>
+format-connected-prefix-foreground = <%= @net_color %>
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = <%= @icon_color %>
+;label-disconnected-foreground = <%= @net_color %>
 
 [module/date]
 type = internal/date
@@ -185,24 +185,24 @@ type = internal/pulseaudio
 
 format-volume = <bar-volume>
 format-volume-prefix = " "
-format-volume-prefix-foreground=<%= @icon_color %>
+format-volume-prefix-foreground=<%= @sound_color %>
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
-format-muted-prefix-foreground=<%= @icon_color %>
+format-muted-prefix-foreground=<%= @sound_color %>
 label-muted = sound muted
 
 bar-volume-width = 10
 bar-volume-gradient = false
 bar-volume-indicator = ━
 bar-volume-indicator-font = 6
-bar-volume-indicator-foreground = <%= @icon_color %>
+bar-volume-indicator-foreground = <%= @sound_color %>
 bar-volume-fill = ━
 bar-volume-fill-font = 6
-bar-volume-fill-foreground = <%= @icon_color %>
+bar-volume-fill-foreground = <%= @sound_color %>
 bar-volume-empty = ━
 bar-volume-empty-font = 6
-bar-volume-empty-foreground = <% @text_color %>
+bar-volume-empty-foreground = <% @foreground %>
 
 [module/battery]
 type = internal/battery
@@ -215,14 +215,14 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix = " "
-format-full-prefix-foreground = <%= @icon_color %>
+format-full-prefix-foreground = <%= @misc_color %>
 
-ramp-capacity-foreground = <%= @icon_color %>
+ramp-capacity-foreground = <%= @misc_color %>
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 
-animation-charging-foreground = <%= @icon_color %>
+animation-charging-foreground = <%= @misc_color %>
 
 animation-charging-0 = 
 animation-charging-1 = 
@@ -237,8 +237,8 @@ warn-temperature = 60
 
 format-prefix = " "
 format-warn-prefix = " "
-format-prefix-foreground = <%= @icon_color %>
-format-warn-prefix-foreground = <%= @icon_color %>
+format-prefix-foreground = <%= @cpu_color %>
+format-warn-prefix-foreground = <%= @cpu_color %>
 
 format = <label>
 format-warn = <label-warn>
@@ -252,7 +252,7 @@ type = custom/script
 exec = gmail.rb
 tail = true
 format-prefix=" "
-format-prefix-foreground=<%= @icon_color %>
+format-prefix-foreground=<%= @misc_color %>
 click-left="firefox gmail.com"
 
 [module/shipping_forecast]
@@ -261,7 +261,7 @@ type = custom/script
 exec = echo 'Wight'
 tail = false
 format-prefix=" "
-format-prefix-foreground=<%= @icon_color %>
+format-prefix-foreground=<%= @misc_color %>
 click-left="marine.rb"
 
 [module/cpu_freq]
@@ -270,7 +270,7 @@ type = custom/script
 exec = "cpu_freq.rb"
 tail = true
 format-prefix=" "
-format-prefix-foreground=<%= @icon_color %>
+format-prefix-foreground=<%= @cpu_color %>
 
 [module/cpu_fan]
 # this is a hacky trick to use format prefixes nothing appears if content is empty
@@ -279,7 +279,7 @@ exec = "cpu_fan.rb"
 tail = false
 internal = 13
 format-prefix=" "
-format-prefix-foreground=<%= @icon_color %>
+format-prefix-foreground=<%= @cpu_color %>
 
 [module/gap]
 type = custom/text
