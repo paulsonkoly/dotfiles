@@ -14,7 +14,7 @@ File.open('/proc/cpuinfo') do |io|
 
       freq = match[:freq].to_f
       min = freq if freq < min
-      max = freq if freq > min
+      max = freq if freq > max
     end
     puts "#{normalize(min)} GHz - #{normalize(max)} GHz"
     STDOUT.flush
