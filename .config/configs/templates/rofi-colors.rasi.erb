@@ -1,9 +1,9 @@
 * {
-    active-background: <%= @active %>;
-    active-foreground: <%= @background %>;
+    active-background: @active;
+    active-foreground: @background;
     normal-background: @background;
     normal-foreground: @foreground;
-    urgent-background: #B3C262;
+    urgent-background: <%= @color1 %>;
     urgent-foreground: @foreground;
 
     alternate-active-background: @background;
@@ -13,17 +13,18 @@
     alternate-urgent-background: @background;
     alternate-urgent-foreground: @foreground;
 
-    selected-active-background: <%= @active %>;
-    selected-active-foreground: <%= @background %>;
-    selected-normal-background: <%= @active %>;
-    selected-normal-foreground: <%= @background %>;
-    selected-urgent-background: #33B5B5;
+    selected-active-background: @active;
+    selected-active-foreground: @background;
+    selected-normal-background: @active;
+    selected-normal-foreground: @background;
+    selected-urgent-background: <%= @color9 %>;
     selected-urgent-foreground: @foreground;
 
+    active: <%= @active %>;
     background-color: @background;
-    background: #101010;
-    foreground: #e3ecdc;
-    border-color: @background;
+    background: <%= @background %>;
+    foreground: <%= @foreground %>;
+    border-color: @active;
     spacing: 2;
 }
 
@@ -39,9 +40,9 @@
 }
 
 #message {
-    border: 2px 0px 0px;
+    border: 1px 0px 0px;
     border-color: @border-color;
-    padding: 1px;
+    padding: 2px;
 }
 
 #textbox {
@@ -61,7 +62,7 @@
 
 #listview {
     fixed-height: 0;
-    border: 2px 0px 0px;
+    border: 1px 0px 0px;
     border-color: @border-color;
     spacing: 2px;
     scrollbar: true;
@@ -126,7 +127,7 @@
 }
 
 #sidebar {
-    border: 2px 0px 0px;
+    border: 1px 0px 0px;
     border-color: @border-color;
 }
 
