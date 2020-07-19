@@ -38,6 +38,7 @@ bindsym $mod+Shift+c kill
 # start dmenu (a program launcher)
 bindsym $mod+p exec rofi -show run
 bindsym $mod+o exec rofi -show window
+bindsym $mod+w exec sudo netctl switch-to "`netctl list | rofi -dmenu -p network | sed 's/^ *//'`"
 
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
@@ -85,7 +86,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
