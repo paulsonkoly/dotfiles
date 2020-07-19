@@ -149,7 +149,7 @@ format-disconnected = down
 ramp-signal-font = 6
 ramp-signal-foreground = <%= @net_color %>
 <% 10.times do |ix| %>
-  ramp-signal-<%= ix %> = ${env:POLYBAR_RAMP_<%= ix %>}
+  ramp-signal-<%= ix %> = "<%= ("━" * ix) << "%{F#{@foreground}}" << ("━" * (9 - ix)) << "%{F-}" %>"
 <% end %>
 
 [module/eth]
