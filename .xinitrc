@@ -13,6 +13,6 @@ start-pulseaudio-x11
 # annoying bell off
 xset b off
 
-wal -R
+feh --bg-center --no-fehbg ~/Downloads/Hydrogen_Remixed.png
 
 exec i3
