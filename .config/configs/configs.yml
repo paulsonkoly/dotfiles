@@ -71,3 +71,15 @@ rofi:
      <<: *color_bindings
      background: "#101010"
      active: *color6
+
+dunst:
+  template: /home/phaul/.config/configs/templates/dunstrc.erb
+  output: /home/phaul/.config/dunst/dunstrc
+  binding:
+    font: *font
+    fontsize: *fontsize
+    background: "#101010"
+    urgency_low: *color6
+    urgency_normal: *color6
+    urgency_critical: *color9
+
