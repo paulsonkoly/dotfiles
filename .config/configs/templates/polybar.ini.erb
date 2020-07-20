@@ -200,15 +200,21 @@ animation-charging-framerate = 750
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+base-temperature = 30
+warn-temperature = 70
 
-format-prefix = " "
-format-warn-prefix = " "
 format-prefix-foreground = <%= @cpu_color %>
-format-warn-prefix-foreground = <%= @cpu_color %>
+format-warn-prefix-foreground = <%= @warning_color %>
 
-format = <label>
-format-warn = <label-warn>
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-foreground= <%= @cpu_color %>
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
 
 label = %temperature-c%
 label-warn = %temperature-c%
