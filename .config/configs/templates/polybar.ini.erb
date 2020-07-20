@@ -132,7 +132,7 @@ format-disconnected = down
 ramp-signal-font = 6
 ramp-signal-foreground = <%= @net_color %>
 <% 10.times do |ix| %>
-  ramp-signal-<%= ix %> = "<%= ("━" * ix) << "%{F#{@foreground}}" << ("━" * (9 - ix)) << "%{F-}" %>"
+  ramp-signal-<%= ix %> = "<%= ("━" * ix) << "%{F#{@foreground}}" << ("╍" * (9 - ix)) << "%{F-}" %>"
 <% end %>
 
 [module/date]
@@ -167,7 +167,7 @@ bar-volume-indicator-foreground = <%= @sound_color %>
 bar-volume-fill = ━
 bar-volume-fill-font = 6
 bar-volume-fill-foreground = <%= @sound_color %>
-bar-volume-empty = ━
+bar-volume-empty = ╍
 bar-volume-empty-font = 6
 bar-volume-empty-foreground = <% @foreground %>
 
