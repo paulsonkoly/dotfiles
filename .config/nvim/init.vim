@@ -8,6 +8,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'cocopon/iceberg.vim'
+Plug 'inkarkat/vim-mark' | Plug 'inkarkat/vim-ingo-library'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -41,6 +42,7 @@ set shiftwidth=2
 set softtabstop=2
 set smartindent
 set colorcolumn=120
+set nohlsearch
 
 set hidden
 
@@ -145,4 +147,12 @@ let g:no_splitjoin_ruby_curly_braces=0
 
 " nnn {{{
 let g:nnn#replace_netrw=1
+" Disable default mappings
+let g:nnn#set_default_mappings = 0
 " }}} nnn
+
+" mark {{{ "
+" this was mapping <Leader># which I use for :BLines
+nmap <Plug>DisableMarkSearchCurrentPrev <Plug>MarkSearchCurrentPrev
+" }}} mark "
+
