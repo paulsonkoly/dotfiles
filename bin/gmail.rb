@@ -22,6 +22,7 @@
 
 require 'yaml'
 require 'gmail'
+require 'libnotify'
 
 LOGIN_CONFIG = File.join(ENV['HOME'], 'gmail.yaml')
 
@@ -51,6 +52,16 @@ def with_connection
 end
 
 with_connection do |gmail|
-  puts gmail.inbox.unseen.count
-  STDOUT.flush
+  new_count = gmail.inbox.unseen.count
+  if @count && @count < new_count
+    Libnotify.new do |notify|
+      notify.summary = 'Email'
+      notify.body = "#{new_count - @count} new unseen"
+    end.show!
+  end
+  if @count != new_count
+    puts new_count
+    STDOUT.flush
+    @count = new_count
+  end
 end
