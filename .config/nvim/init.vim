@@ -4,11 +4,12 @@ scriptencoding utf-8
 " vim-plug {{{
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'chrisbra/Colorizer'
 Plug 'cocopon/iceberg.vim'
 Plug 'diepm/vim-rest-console'
+Plug 'inkarkat/vim-mark' | Plug 'inkarkat/vim-ingo-library'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -19,9 +20,11 @@ Plug 'lambdalisue/vim-gista'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mattn/emmet-vim'
 Plug 'mcchrish/nnn.vim'
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'neomake/neomake'
 Plug 'noprompt/vim-yardoc', { 'for': 'ruby' }
 Plug 'rickhowe/diffchar.vim'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 't9md/vim-ruby-xmpfilter', { 'for': 'ruby' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -41,6 +44,7 @@ set shiftwidth=2
 set softtabstop=2
 set smartindent
 set colorcolumn=120
+set nohlsearch
 
 set hidden
 
@@ -143,9 +147,17 @@ let g:no_splitjoin_ruby_curly_braces=0
 
 " nnn {{{
 let g:nnn#replace_netrw=1
+" Disable default mappings
+let g:nnn#set_default_mappings = 0
 " }}} nnn
 
 " VRC {{{ "
 let g:vrc_set_default_mapping = 0
 map <Leader>r :call VrcQuery()<CR>
 " }}} VRC "
+
+" mark {{{ "
+" this was mapping <Leader># which I use for :BLines
+nmap <Plug>DisableMarkSearchCurrentPrev <Plug>MarkSearchCurrentPrev
+" }}} mark "
+
