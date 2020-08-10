@@ -153,11 +153,11 @@ let g:nnn#set_default_mappings = 0
 
 " VRC {{{ "
 let g:vrc_set_default_mapping = 0
-map <Leader>r :call VrcQuery()<CR>
+map <Leader>x :call VrcQuery()<CR>
 " }}} VRC "
 
 " mark {{{ "
 " this was mapping <Leader># which I use for :BLines
 nmap <Plug>DisableMarkSearchCurrentPrev <Plug>MarkSearchCurrentPrev
+nmap <Plug>DisableMarkRegex <Plug>MarkRegex
 " }}} mark "
-
