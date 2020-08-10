@@ -88,12 +88,28 @@ let g:lightline = {
   \              [ 'percent' ],
   \              [ 'fileformat', 'fileencoding', 'filetype' ] ] },
   \ 'component_function': { 'gitbranch': 'gina#component#repo#branch' },
-  \ 'colorscheme': 'wombat'
+  \ 'colorscheme': 'iceberg'
   \ }
 " }}} lightline
 
 " Neomake {{{ "
 call neomake#configure#automake('w')
+let g:neomake_error_sign = {
+      \ 'text': '●',
+      \ 'texthl': 'NeomakeErrorSign',
+      \ }
+let g:neomake_warning_sign = {
+      \   'text': '●',
+      \   'texthl': 'NeomakeWarningSign',
+      \ }
+let g:neomake_message_sign = {
+      \   'text': '●',
+      \   'texthl': 'NeomakeMessageSign',
+      \ }
+let g:neomake_info_sign = {
+      \ 'text': '●',
+      \ 'texthl': 'NeomakeInfoSign'
+      \ }
 " }}} Neomake "
 
 " easy align {{{
@@ -155,4 +171,3 @@ let g:nnn#set_default_mappings = 0
 " this was mapping <Leader># which I use for :BLines
 nmap <Plug>DisableMarkSearchCurrentPrev <Plug>MarkSearchCurrentPrev
 " }}} mark "
-
