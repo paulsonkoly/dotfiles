@@ -4,6 +4,7 @@ aliases:
   color_bindings: &color_bindings
     background: &background "#1c1c1c"
     foreground: &foreground "#e3ecdc"
+    border_color: &border_color "#b3c262"
     cursor: &cursor "#505050"
     color0: &color0 "#1e2132"
     color1: &color1 "#e27878"
@@ -54,7 +55,7 @@ i3:
   template: /home/phaul/.config/configs/templates/i3.ini.erb
   output: /home/phaul/.config/i3/config
   binding:
-    border_color: "#b3c262"
+    border_color: *border_color
     text_color: *background
 
 rofi_top:
@@ -82,4 +83,5 @@ dunst:
     urgency_low: *color6
     urgency_normal: *color6
     urgency_critical: *color9
+    frame_color: *border_color
 
