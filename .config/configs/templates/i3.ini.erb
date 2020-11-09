@@ -114,9 +114,12 @@ set $workspace9 "9: www"
 assign [class="firefox"] $workspace9
 
 # switch to workspace
-<% (1..9).each do |ix| %>
+<% (1..8).each do |ix| %>
   bindsym $mod+<%= ix %> workspace $workspace<%= ix %>
 <% end %>
+
+# auto start firefox if wasn't running
+bindsym $mod+9 exec autostart_firefox.rb
 
 # move focused container to workspace
 <% (1..9).each do |ix| %>
