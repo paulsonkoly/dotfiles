@@ -2,23 +2,48 @@
 
 # frozen_string_literal: true
 
-def normalize(float)
-  float.fdiv(1024).round(2)
+class Ramp
+  RAMPSTRING = '▁▂▃▄▅▆▇█'
+
+  def initialize(min, max)
+    @min = min
+    @max = max
+  end
+
+  def for_values(*values)
+    values.map { |value| for_value(value) }.join
+  end
+
+  private
+
+  def for_value(value)
+    RAMPSTRING[indexify(value)]
+  end
+
+  def indexify(value)
+    return 0 if value < @min
+
+    (value - @min) / range.fdiv(RAMPSTRING.length)
+  end
+
+  def range
+    @max - @min
+  end
 end
+
+ramp = Ramp.new(1200, 3800) # khz
 
 File.open('/proc/cpuinfo') do |io|
   loop do
-    min, max = Float::MAX, 0
-    io.each_line do |line|
+    # min, max = Float::MAX, 0
+    frequencies = io.each_line.map do |line|
       next unless (match = /cpu MHz[\s]*: (?<freq>[\d.]+)/.match(line))
 
-      freq = match[:freq].to_f
-      min = freq if freq < min
-      max = freq if freq > max
-    end
-    puts "#{normalize(min)} GHz - #{normalize(max)} GHz"
+      match[:freq].to_f
+    end.compact
+    puts ramp.for_values(*frequencies)
     STDOUT.flush
     io.rewind
-    sleep 5
+    sleep 3
   end
 end
