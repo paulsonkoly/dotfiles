@@ -74,6 +74,7 @@ set list
 " -- Insert -- on the command line
 set noshowmode
 
+set termguicolors
 colorscheme iceberg
 set cursorline
 
