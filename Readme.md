@@ -34,11 +34,11 @@ These screenshots were taken in Jul/2019 and since then the look of the setup
 has changed slightly. If you are after re-creating the looks on the screenshot
 probably you should check out the commit that has the shots posted. (021715c2)
 
-Fake busy:
-![fake busy](screenshots/vim_with_haskell.png)
+Rofi / dunst:
+![rofi](screenshots/rofi.png)
 
-Weechat:
-![weechat](screenshots/weechat.png)
+vim:
+![vim](screenshots/vim.png)
 
 Empty, with dunst notification:
 ![empty](screenshots/empty.png)
