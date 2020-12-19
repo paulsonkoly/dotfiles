@@ -40,7 +40,7 @@ Rofi / dunst:
 vim:
 ![vim](screenshots/vim.png)
 
-Empty, with dunst notification:
+Empty:
 ![empty](screenshots/empty.png)
 
 Wallpaper
