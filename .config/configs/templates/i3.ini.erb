@@ -111,14 +111,16 @@ set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9: www"
 
+assign [title="weechat"] $workspace3
 assign [class="firefox"] $workspace9
 
 # switch to workspace
-<% (1..8).each do |ix| %>
+<% [1, 2, 4, 5, 6, 7, 8].each do |ix| %>
   bindsym $mod+<%= ix %> workspace $workspace<%= ix %>
 <% end %>
 
-# auto start firefox if wasn't running
+# auto start programs on their respective ws
+bindsym $mod+3 exec autostart_weechat.rb
 bindsym $mod+9 exec autostart_firefox.rb
 
 # move focused container to workspace
