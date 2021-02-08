@@ -22,8 +22,9 @@ zle -N edit-command-line
 bindkey '^x^x' edit-command-line
 
 source $HOME/.profile
-source $HOME/.zsh/minimal/minimal.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
+
+eval "$(starship init zsh)"

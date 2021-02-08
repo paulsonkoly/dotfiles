@@ -23,7 +23,7 @@ aliases:
     color14: &color14 "#95c4ce"
     color15: &color15 "#d2d4de"
 
-  font: &font Fantasque Sans Mono
+  font: &font FantasqueSansMono Nerd Font
   fontsize: &fontsize 13
 
 termite:
