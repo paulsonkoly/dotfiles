@@ -17,12 +17,7 @@ padding-right = 0
 module-margin-left = 3
 module-margin-right = 0
 
-font-0 = Fantasque Sans Mono:style=Regular:pixelsize=12; 2
-font-1 = Font Awesome 5 Free:style=Solid:pixelsize=13; 2
-font-2 = Font Awesome 5 Free:style=Regular:pixelsize=13; 2
-font-3 = Font Awesome 5 Brands:pixelsize=13; 2
-font-4 = Font Awesome 5 Free:style=Solid:pixelsize=10; 2
-font-5 = Fantasque Sans Mono:style=Regular:pixelsize=12; 1
+font-0 = FantasqueSansMono Nerd Font:style=Regular:pixelsize=12; 2
 
 modules-left = i3
 modules-center = xwindow
@@ -41,7 +36,7 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = <%= @misc_color %>
 
 label-layout = %layout%
@@ -74,7 +69,7 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-ws-icon-0 = "1: shell;%{T5}%{T-}"
+ws-icon-0 = "1: shell;"
 ws-icon-1 = "3: chat; "
 ws-icon-2 = "9: www; "
 
@@ -103,7 +98,7 @@ label-urgent-padding = ${self.label-focused-padding}
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = ""
 format-prefix-foreground=<%= @cpu_color %>
 label = %percentage:2%%
 
@@ -162,13 +157,10 @@ label-muted = sound muted
 bar-volume-width = 10
 bar-volume-gradient = false
 bar-volume-indicator = ━
-bar-volume-indicator-font = 6
 bar-volume-indicator-foreground = <%= @sound_color %>
 bar-volume-fill = ━
-bar-volume-fill-font = 6
 bar-volume-fill-foreground = <%= @sound_color %>
 bar-volume-empty = ╍
-bar-volume-empty-font = 6
 bar-volume-empty-foreground = <% @foreground %>
 
 [module/battery]
@@ -181,20 +173,20 @@ format-charging = <animation-charging> <label-charging>
 
 format-discharging = <ramp-capacity> <label-discharging>
 
-format-full-prefix = " "
+format-full-prefix = "  "
 format-full-prefix-foreground = <%= @misc_color %>
 
 ramp-capacity-foreground = <%= @misc_color %>
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
 
 animation-charging-foreground = <%= @misc_color %>
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-3 = " "
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -242,7 +234,7 @@ click-left="marine.rb"
 type = custom/script
 exec = "cpu_freq.rb"
 tail = true
-format-prefix=" "
+format-prefix=" "
 format-prefix-foreground=<%= @cpu_color %>
 
 [module/cpu_fan]
@@ -251,7 +243,7 @@ type = custom/script
 exec = "cpu_fan.rb"
 tail = false
 internal = 13
-format-prefix="  "
+format-prefix=" "
 format-prefix-foreground=<%= @cpu_color %>
 
 [module/gap]
