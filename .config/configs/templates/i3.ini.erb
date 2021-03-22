@@ -39,6 +39,7 @@ bindsym $mod+Shift+c kill
 bindsym $mod+p exec rofi -show run
 bindsym $mod+o exec rofi -show window
 bindsym $mod+w exec sudo netctl switch-to "`netctl list | rofi -dmenu -p network | sed 's/^ *//'`"
+bindsym $mod+m exec termite -t pacmixer -e pacmixer
 
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
@@ -169,6 +170,7 @@ client.focused <%= @border_color %> <%= @border_color %> <%= @text_color %> <%= 
 client.background       #ffffff
 
 for_window [class="^.*"] border pixel 1
+for_window [title="pacmixer"] floating enable
 hide_edge_borders smart
 
 for_window [class="[bB]lueberry.*"] floating enable
