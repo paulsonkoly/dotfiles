@@ -1,4 +1,5 @@
 require('plugins')
+require('options')
 require('colorscheme')
 require('bindings')
 require('nv-lspconfig')
