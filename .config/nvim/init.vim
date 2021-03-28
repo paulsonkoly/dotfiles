@@ -54,6 +54,13 @@ noremap ]g :cnext<CR>
 noremap [g :cprevious<CR>
 " }}} generic global vim options
 
+" window movement {{{ "
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+" }}} window movement "
+
 " Colorcheme overrides {{{
 " only works before the colorscheme selection
 augroup ColourScheme
