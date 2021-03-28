@@ -1,6 +1,6 @@
 require('plugins')
 require('colorscheme')
 require('bindings')
-require('lspconfig_settings')
+require('nv-lspconfig')
 require('compe_settings')
 require('telescope_settings')
