@@ -1,2 +1,5 @@
 [ruby]
 symbol = " "
+
+[lua]
+symbol = " "
