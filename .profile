@@ -3,7 +3,7 @@
 
 unset FZF_DEFAULT_OPTS # I like original don't need to alter fzf colours
 
-PATH="$PATH:$HOME/bin"
+PATH="$HOME/bin:$HOME/.luarocks/bin:$PATH"
 
 export PATH
 

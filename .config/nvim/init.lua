@@ -1,0 +1,6 @@
+require('plugins')
+require('colorscheme')
+require('bindings')
+require('lspconfig_settings')
+require('compe_settings')
+require('telescope_settings')
