@@ -9,3 +9,9 @@ vim.o.colorcolumn = '120'
 vim.o.hlsearch = false
 
 vim.o.hidden = true
+
+vim.o.listchars='trail:·'
+vim.wo.list = true
+
+vim.o.showmode = false
+vim.wo.cursorline = true
