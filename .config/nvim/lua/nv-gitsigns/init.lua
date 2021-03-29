@@ -1,4 +1,9 @@
-local gs = require('gitsigns').setup()
+local gs_config = {
+  signs = {
+    add = { text = '┃' },
+    change = { text = '┃' }
 
-gs.signs.add.text = '┃'
-gs.signs.change.text = '┃'
+  }
+}
+
+require('gitsigns').setup(gs_config)
