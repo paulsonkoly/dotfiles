@@ -7,11 +7,13 @@ if not lspconfig.solargraph then
     default_config = {
       cmd = {'solargraph stdio'};
       filetypes = {'ruby'};
-      root_dir = function(fname)
-        return lspconfig.util.find_git_ancestor(fname) or vim.loop.os_homedir()
-      end;
-      settings = {};
-    };
+      root_dir = root_pattern('Gemfile', '.git');
+      settings = {
+        solargraph = {
+          transport = 'stdio'
+        };
+      };
+    }
   }
 end
 lspconfig.solargraph.setup{}
