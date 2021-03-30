@@ -7,6 +7,7 @@ end
 
 local custom_attach = function(client)
   mapper('n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
+  mapper('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 end
 
 lspconfig.solargraph.setup({
