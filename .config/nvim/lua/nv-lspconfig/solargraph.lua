@@ -1,19 +1,21 @@
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
 
--- Check if it's already defined for when reloading this file.
-if not lspconfig.solargraph then
-  configs.solargraph = {
-    default_config = {
-      cmd = {'solargraph stdio'};
-      filetypes = {'ruby'};
-      root_dir = root_pattern('Gemfile', '.git');
-      settings = {
-        solargraph = {
-          transport = 'stdio'
-        };
-      };
-    }
-  }
+local mapper = function(mode, key, result)
+  vim.api.nvim_buf_set_keymap(0, mode, key, result, { noremap = true, silent = true })
 end
-lspconfig.solargraph.setup{}
+
+local custom_attach = function(client)
+  mapper('n', '<c-]>', '<cmd>lua vim.lsp.buf.definition()<CR>')
+end
+
+lspconfig.solargraph.setup({
+  filetypes = {'ruby'};
+  root_dir = lspconfig.util.root_pattern('Gemfile', '.git'),
+  settings = {
+    solargraph = {
+      transport = 'stdio'
+    }
+  },
+  on_attach = custom_attach
+})
