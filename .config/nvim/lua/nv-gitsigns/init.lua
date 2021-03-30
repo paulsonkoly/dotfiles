@@ -2,7 +2,6 @@ local gs_config = {
   signs = {
     add = { text = '┃' },
     change = { text = '┃' }
-
   }
 }
 

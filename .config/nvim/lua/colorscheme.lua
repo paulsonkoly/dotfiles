@@ -5,6 +5,9 @@ vim.api.nvim_exec([[
 augroup ColourScheme
   autocmd!
   autocmd ColorScheme * highlight link ExtraWhitespace ErrorMsg
+  autocmd ColorScheme * highlight link GitSignsAdd GitGutterAdd
+  autocmd ColorScheme * highlight link GitSignsChange GitGutterChange
+  autocmd ColorScheme * highlight link GitSignsDelete GitGutterDelete
   autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 augroup END
 ]], false)
