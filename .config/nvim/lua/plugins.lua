@@ -24,4 +24,5 @@ return require('packer').startup(function()
   }
   use 'TimUntersberger/neogit'
   use 'AndrewRadev/splitjoin.vim'
+  use 'b3nj5m1n/kommentary'
 end)
