@@ -8,6 +8,10 @@ augroup ColourScheme
   autocmd ColorScheme * highlight link GitSignsAdd GitGutterAdd
   autocmd ColorScheme * highlight link GitSignsChange GitGutterChange
   autocmd ColorScheme * highlight link GitSignsDelete GitGutterDelete
+  autocmd ColorScheme * highlight! LspDiagnosticsSignError guifg=#f44747 guibg=#1e2132
+  autocmd ColorScheme * highlight! LspDiagnosticsSignWarning guifg=#ff8800 guibg=#1e2132
+  autocmd ColorScheme * highlight! LspDiagnosticsSignHint guifg=#4fc1ff guibg=#1e2132
+  autocmd ColorScheme * highlight! LspDiagnosticsSignInformation guifg=#ffcc66 guibg=#1e2132
   autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 augroup END
 ]], false)
