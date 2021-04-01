@@ -1,7 +1,6 @@
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$HOME/.rvm/bin:$PATH"
-
+export PATH="/usr/local/opt/python@3.9/bin:$HOME/.rvm/bin:$PATH"
 source $HOME/.bashrc
 
 alias vim=nvim
@@ -30,8 +29,9 @@ zle -N edit-command-line
 bindkey '^x^x' edit-command-line
 
 source $HOME/.profile
-source $HOME/.zsh/minimal/minimal.zsh
 source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
 source /usr/local/opt/fzf/shell/completion.zsh
 source /usr/local/opt/fzf/shell/key-bindings.zsh
+
+eval "$(starship init zsh)"

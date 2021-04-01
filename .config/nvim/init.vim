@@ -54,6 +54,13 @@ noremap ]g :cnext<CR>
 noremap [g :cprevious<CR>
 " }}} generic global vim options
 
+" window movement {{{ "
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+" }}} window movement "
+
 " Colorcheme overrides {{{
 " only works before the colorscheme selection
 augroup ColourScheme
@@ -74,6 +81,7 @@ set list
 " -- Insert -- on the command line
 set noshowmode
 
+set termguicolors
 colorscheme iceberg
 set cursorline
 
@@ -94,6 +102,22 @@ let g:lightline = {
 
 " Neomake {{{ "
 call neomake#configure#automake('w')
+let g:neomake_error_sign = {
+      \ 'text': '●',
+      \ 'texthl': 'NeomakeErrorSign',
+      \ }
+let g:neomake_warning_sign = {
+      \   'text': '●',
+      \   'texthl': 'NeomakeWarningSign',
+      \ }
+let g:neomake_message_sign = {
+      \   'text': '●',
+      \   'texthl': 'NeomakeMessageSign',
+      \ }
+let g:neomake_info_sign = {
+      \ 'text': '●',
+      \ 'texthl': 'NeomakeInfoSign'
+      \ }
 " }}} Neomake "
 
 " easy align {{{
@@ -153,11 +177,11 @@ let g:nnn#set_default_mappings = 0
 
 " VRC {{{ "
 let g:vrc_set_default_mapping = 0
-map <Leader>x :call VrcQuery()<CR>
+map <Leader>- :call VrcQuery()<CR>
 " }}} VRC "
 
 " mark {{{ "
 " this was mapping <Leader># which I use for :BLines
 nmap <Plug>DisableMarkSearchCurrentPrev <Plug>MarkSearchCurrentPrev
-nmap <Plug>DisableMarkRegex <Plug>MarkRegex
 " }}} mark "
+
