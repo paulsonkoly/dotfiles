@@ -3,6 +3,7 @@ return require('packer').startup(function()
   use 'cocopon/iceberg.vim'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-compe'
+  use 'onsails/lspkind-nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use {
     'nvim-telescope/telescope.nvim',
