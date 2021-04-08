@@ -4,6 +4,7 @@ return require('packer').startup(function()
   use 'cocopon/iceberg.vim'
 
   use 'AndrewRadev/splitjoin.vim'
+  use "b3nj5m1n/kommentary"
   use 'cossonleo/neo-smooth-scroll.nvim'
   use { 'glepnir/galaxyline.nvim', branch = 'main' }
   use 'hrsh7th/nvim-compe'
@@ -17,6 +18,7 @@ return require('packer').startup(function()
   use 'onsails/lspkind-nvim'
   use { 'SirVer/ultisnips', requires = { 'honza/vim-snippets' } }
   use 'TimUntersberger/neogit'
+  use "tversteeg/registers.nvim"
   use "tweekmonster/startuptime.vim"
   use 'windwp/nvim-autopairs'
 end)
