@@ -10,4 +10,4 @@ map('t', '<C-j>', '<C-\\><C-N><C-w>j', opts)
 map('t', '<C-k>', '<C-\\><C-N><C-w>k', opts)
 map('t', '<C-l>', '<C-\\><C-N><C-w>l', opts)
 
--- vim.g.mapleader = '#'
+vim.g.mapleader = '#'
