@@ -72,3 +72,19 @@ endsnippet
 snippet atr "rails form attribute" b
 attribute ${1::name}, ${0:Decimal}
 endsnippet
+
+snippet ep "entrypoint"
+# frozen_string_literal: true
+
+module `!v substitute(split(expand(@%), '/')[-2], '\v(^|_)(.)', '\u\2', 'g')`
+
+  class EntryPoint
+
+    include ::EntryPoint
+
+    def initialize(${1:employee}:)
+      self.action = Action.new($1: $1)
+    end
+  end
+end
+endsnippet
