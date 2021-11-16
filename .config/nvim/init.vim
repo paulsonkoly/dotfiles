@@ -13,7 +13,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-peekaboo'
-Plug 'kkoomen/vim-doge'
 Plug 'lambdalisue/gina.vim'
 Plug 'lambdalisue/vim-gista'
 Plug 'machakann/vim-highlightedyank'
@@ -54,11 +53,18 @@ noremap ]g :cnext<CR>
 noremap [g :cprevious<CR>
 " }}} generic global vim options
 
-" window movement {{{ "
+" window movement / terminal mode maps {{{ "
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+
+tnoremap <Esc> <C-\><C-n>
+
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
 " }}} window movement "
 
 " Colorcheme overrides {{{
@@ -72,6 +78,7 @@ augroup ColourScheme
     autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 augroup END
 highlight ExtraWhitespace ctermbg=red guibg=red
+set background=dark
 " }}} Colorscheme overrides
 
 " visual appearance {{{
