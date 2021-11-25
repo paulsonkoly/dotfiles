@@ -59,7 +59,7 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-tnoremap <Esc> <C-\><C-n>
+tnoremap <C-\><C-\> <C-\><C-n>
 
 tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
