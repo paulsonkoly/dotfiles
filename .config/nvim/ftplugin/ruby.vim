@@ -11,3 +11,6 @@ imap <buffer> <Leader>r <Plug>(seeing_is_believing-run_-x)
 " highlight operators in ruby
 let ruby_operators=1
 let ruby_spellcheck_strings=1
+
+nnoremap <buffer> <leader>. :call OpenTestAlternate()<cr>
+map <buffer> <F5> <Esc>:!bundle exec rspec --no-color %<CR>

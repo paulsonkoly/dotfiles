@@ -177,13 +177,45 @@ map <leader>; :History:<CR>
 let g:no_splitjoin_ruby_curly_braces=0
 " }}} SplitJoin
 
-" nnn {{{
-let g:nnn#replace_netrw=1
-" Disable default mappings
-let g:nnn#set_default_mappings = 0
-" }}} nnn
-
 " mark {{{ "
 " this was mapping <Leader># which I use for :BLines
 nmap <Plug>DisableMarkSearchCurrentPrev <Plug>MarkSearchCurrentPrev
 " }}} mark "
+
+" switch rb/rspec {{{ "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SWITCH BETWEEN TEST AND PRODUCTION CODE
+" original stolen from https://raw.githubusercontent.com/garybernhardt/dotfiles/main/.vimrc
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! OpenTestAlternate()
+  let new_file = AlternateForCurrentFile()
+  exec ':e ' . new_file
+endfunction
+function! AlternateForCurrentFile()
+  let current_file = expand("%")
+  let new_file = current_file
+  let in_spec = match(current_file, '^spec/') != -1
+  let going_to_spec = !in_spec
+  let in_app = match(current_file, '\<controllers\>') != -1
+        \ || match(current_file, '\<models\>') != -1
+        \ || match(current_file, '\<workers\>') != -1
+        \ || match(current_file, '\<views\>') != -1
+        \ || match(current_file, '\<helpers\>') != -1
+        \ || match(current_file, '\<services\>') != -1
+        \ || match(current_file, '\<units\>') != -1
+  if going_to_spec
+    if in_app
+      let new_file = substitute(new_file, '^app/', '', '')
+    end
+    let new_file = substitute(new_file, '\.e\?rb$', '_spec.rb', '')
+    let new_file = 'spec/' . new_file
+  else
+    let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
+    let new_file = substitute(new_file, '^spec/', '', '')
+    if in_app
+      let new_file = 'app/' . new_file
+    end
+  endif
+  return new_file
+endfunction
+" }}} switch rb/rspec "
